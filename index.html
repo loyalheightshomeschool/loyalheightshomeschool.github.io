@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spring 2020 Classes - Loyal Heights Homeschool</title>
+<style>
+	body {
+        padding: 0px;
+        border: 0px;
+        margin: 0px;
+      }
+      footer {
+      	position: sticky;
+        bottom: 0px;
+        padding: 8px;
+        max-width: 1200px;
+				margin: auto;
+				font-family: sans-serif;
+        display: flex;
+      }
+      .filler {
+      	flex: 1 1 auto;
+      }
+      .back-to-top {
+        text-decoration: none;
+        color: black;
+        padding: 8px;
+        background-color: white;
+        right: 0px;
+      }
+      .back-to-top:hover {
+      	background-color: lightgray;
+      }
+      header {
+      	max-width: 1200px;
+				margin: auto;
+				padding: 8px;
+        position: sticky;
+        top: 0px;
+        font-family: sans-serif;
+        background-color: white;
+        display: flex;
+      }
+      .header-title {
+      	flex: 1 1 auto;
+      	font-family: sans-serif;
+      	font-size: 32px;
+      }
+      .mainmenubtn {
+          cursor: pointer;
+          text-decoration: none;
+          color: black;
+          padding: 16px;
+      }
+      .mainmenubtn:hover {
+          background-color: lightgray;
+          }
+      .dropdown {
+          position: relative;
+          display: inline-block;
+          background-color: white;
+      }
+      .dropdown-child {
+      	background-color: white;
+          position: absolute;
+          top: 32px;
+          display: none;
+          min-width: 200px;
+      }
+      .dropdown-child a {
+          color: blue;
+          padding: 16px;
+          text-decoration: none;
+          display: block;
+      }
+      .dropdown-child a:hover {
+      	background-color: lightgray;
+      }
+      .dropdown:hover .dropdown-child {
+          display: block;
+      }
+	h1, h2, h3, h4, h5, h6 {
+		font-family: sans-serif;
+	}
+	.middle {
+		max-width: 800px;
+		margin: auto;
+		padding: 8px;
+	}
+	.schedule {
+		display: grid;
+		grid-template-columns: repeat(6, auto);
+		gap: 4px;
+		grid-template-rows: repeat(9, auto);
+		font-size: 80%;
+		font-family: sans-serif;
+	}
+	.schedule-course {
+		color: black;
+		box-shadow: none;
+		text-decoration: none;
+		padding: 8px;
+		line-height: 130%;
+	}
+	.schedule-item {
+		padding: 8px;
+		display:flex;align-items:center;justify-content:center;
+		font-weight: bold;
+		background-color: #B0BEC5;
+	}
+	.schedule-time {
+		grid-column: 1;
+		align-self: center;
+		justify-self: center;
+		padding: 8px;
+	}
+	.graybar {
+		grid-column: 1 / 7;
+		background-color: #EEEEEE;
+	}
+	.room {
+		grid-row: 1;
+		justify-self: center;
+		font-weight: bold;
+		padding: 8px;
+	}
+	.class-description-heading {
+		padding: 16px;
+	}
+
+	.row1 {grid-row: 1;}
+	.row2 {grid-row: 2;}
+	.row3 {grid-row: 3;}
+	.row4 {grid-row: 4;}
+	.row4-6 {grid-row: 4 / 6;}
+	.row5 {grid-row: 5;}
+	.row5-7 {grid-row: 5 / 7;}
+	.row6 {grid-row: 6;}
+	.row7 {grid-row: 7;}
+	.row7-9 {grid-row: 7 / 9;}
+	.row8 {grid-row: 8;}
+	.row9 {grid-row: 9;}
+
+	.col2 {grid-column: 2;}
+	.col3 {grid-column: 3;}
+	.col3-7 {grid-column: 3 / 7;}
+	.col4 {grid-column: 4;}
+	.col5 {grid-column: 5;}
+	.col6 {grid-column: 6;}
+
+	.red {background-color: #ef9a9a;}
+	.pink {background-color: #f48fb1;}
+	.purple {background-color: #ce93d8;}
+	.deep-purple {background-color: #b39ddb;}
+	.indigo {background-color: #9fa8da;}
+	.blue {background-color: #90caf9;}
+	.light-blue {background-color: #81d4fa;}
+	.cyan {background-color: #80deea;}
+	.teal {background-color: #80cbc4;}
+	.green {background-color: #a5d6a7;}
+	.light-green {background-color: #c5e1a5;}
+	.lime {background-color: #e6ee9c;}
+	.yellow {background-color: #fff59d;}
+	.amber {background-color: #ffe082;}
+	.orange {background-color: #ffcc80;}
+	.deep-orange {background-color: #ffab91;}
+	.brown {background-color: #bcaaa4;}
+	.blue-gray {background-color: #B0BEC5;}
+
+	.error {
+		color: #B00020;
+		font-weight: bold;
+	}
+</style>
+</head>
+
+<body>
+	<header>
+      <div class="header-title">Loyal Heights Homeschool</div>
+      <div class="dropdown">
+        <span class="mainmenubtn">Classes &#9660;</span>
+        <div class="dropdown-child">
+          <a href="http://wwww.yourdomain.com/page2.html">Fall 2022 Classes</a>
+          <a href="http://wwww.yourdomain.com/page3.html">Spring 2022 Classes</a>
+          <a href="http://wwww.yourdomain.com/page4.html">Winter 2022 Classes</a>
+          <a href="http://wwww.yourdomain.com/page5.html">Previous Classes</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="mainmenubtn">About Our Program &#9660;</a>
+        <div class="dropdown-child">
+          <a href="http://wwww.yourdomain.com/page2.html">Meet Our Teachers</a>
+          <a href="http://wwww.yourdomain.com/page3.html">FAQs for Parents</a>
+        </div>
+      </div>
+      <a href="#" class="mainmenubtn">Contact</a></button>
+      <div class="dropdown">
+        <a href="#" class="mainmenubtn">Register for Classes &#9660;</a>
+        <div class="dropdown-child">
+          <a href="http://wwww.yourdomain.com/page2.html">Scholarships</a>
+        </div>
+      </div>
+    </header>
+
+<div class="middle">
+<h1>Spring 2020 Classes</h1>
+		
+<p><strong>Spring 2020: Wednesdays April 8 to June 3, 2020 (9 Weeks, no break)</strong></p>
+
+<p class="error">Spring Classes have been cancelled by the Parks department. Refunds should be issued.</p>
+
+<p>Registration opens at Noon on March 3, 2020. Register in person (Loyal Heights Community Center), by phone (206) 684-4052, or online at <a rel="noreferrer noopener" href="https://anc.apm.activecommunities.com/seattle/activity/search?onlineSiteId=0&amp;activity_select_param=2&amp;activity_keyword=homeschool&amp;viewMode=list" target="_blank">Seattle Parks and Recreation</a>.</p>
+
+<h2>Schedule</h2>
+
+<p>Download printable PDF <a rel="noreferrer noopener" href="https://loyalheightshomeschool.files.wordpress.com/2020/02/2020_spring-class-table-final-1.pdf" target="_blank">here</a></p>
+
+<div class="schedule">
+
+<div class="graybar row1"></div>
+<div class="graybar row3"></div>
+<div class="graybar row5"></div>
+<div class="graybar row7"></div>
+<div class="graybar row9"></div>
+
+<div class="room col2">Room 2</div>
+<div class="room col3">Room 3</div>
+<div class="room col4">Room 4</div>
+<div class="room col5">Gym</div>
+<div class="room col6">Kitchen</div>
+
+<div class="schedule-time row2">10:00</div>
+<div class="schedule-time row3">11:00</div>
+<div class="schedule-time row4">12:00</div>
+<div class="schedule-time row5">12:15</div>
+<div class="schedule-time row6">12:55</div>
+<div class="schedule-time row7">1:15</div>
+<div class="schedule-time row8">2:15</div>
+<div class="schedule-time row9">3:15</div>
+
+<a href="#Carpentry912" class="schedule-course col2 row2 red"><strong>Carpentry</strong><br>Kids' Carpentry<br>Ages 9 - 12<br>$200</a>
+<a href="#Carpentry68" class="schedule-course col2 row3 pink"><strong>Carpentry</strong><br>Kids' Carpentry<br>Ages 6 - 8<br>$200</a>
+
+<div class="schedule-item col2 row4">Carpentry<br>Clean-up</div>
+
+<a href="#CreativeDance" class="schedule-course col2 row5-7 purple"><strong>Creative Dance</strong><br>Miranda Veenhuysen<br>Ages 3 - 6<br>$128</a>
+<a href="#Parkour" class="schedule-course col2 row7 deep-purple"><strong>Parkour</strong><br>Nathan Drackett<br>Ages 8 - 16<br>$138</a>
+<a href="#Improv" class="schedule-course col2 row8 indigo"><strong>Improv</strong><br>Nathan Drackett<br>Ages 11 - 16<br>$138</a>
+<a href="#HandsOnMath" class="schedule-course col3 row2 blue"><strong>Hands-On Math</strong><br>Marcia Miller<br>Ages 5 - 8<br>$145</a>
+<a href="#HandsOnMathInvestigations" class="schedule-course col3 row3 light-blue"><strong>Hands-On Math Investigations</strong><br>Marcia Miller<br>Ages 8 - 11<br>$145</a>
+<a href="#JewelryMaking" class="schedule-course col3 row4-6 cyan"><strong>Jewelry Making</strong><br>Amber Daub<br>Ages 7 - 11<br>$140</a>
+
+<div class="schedule-item col3-7 row6">Break</div>
+
+<a href="#ArtExploration" class="schedule-course col4 row2 teal"><strong>Art Exploration</strong><br>Tracy Banaszynski<br>Ages 6 - 9<br>$140</a>
+<a href="#BuddingArtistsWorkshop" class="schedule-course col4 row3 green"><strong>Budding Artists Workshop</strong><br>Tracy Banaszynski<br>Ages 3 - 6<br>$140</a>
+<a href="#FundamentalsOfDrawing" class="schedule-course col4 row4-6 light-green"><strong>Fundamentals of Drawing</strong><br>Ameen Dhillon<br>Ages 10 - 16<br>$150</a>
+<a href="#CulturalAnthropology" class="schedule-course col4 row7 lime"><strong>Cultural Anthropology</strong><br>Karen Radcliff<br>Ages 10 - 15<br>$140</a>
+<a href="#WriteAChooseYourOwnAdventureStory" class="schedule-course col4 row8 yellow"><strong>Write a Choose Your Own Adventure Story</strong><br>Molly Moench<br>Ages 9 - 12<br>$138</a>
+<a href="#IntroToLabScience" class="schedule-course col4 row9 amber"><strong>Intro to Lab Science:<br>Physics</strong><br>Molly Moench<br>Ages 10 - 15<br>$140</a>
+<a href="#UltimateFrisbee" class="schedule-course col5 row3 orange"><strong>Ultimate Frisbee</strong><br>Rick Buyce<br>Ages 9 - 16<br>$108</a>
+<a href="#SportsUnlimited" class="schedule-course col5 row4-6 deep-orange"><strong>Sports Unlimited</strong><br>Rick Buyce<br>Ages 5 - 8<br>$108</a>
+
+<div class="schedule-item col5 row7-9">Open<br>Gym</div>
+
+<a href="#HandsOnScience" class="schedule-course col6 row7 brown"><strong>Hands-On Science:<br>Earth Science</strong><br>Molly Moench<br>Ages 6 - 9<br>$150</a>
+</div>
+
+<h2>Descriptions</h2>
+
+<p>Download printable PDF <a href="https://loyalheightshomeschool.files.wordpress.com/2020/02/2020_spring-lhh-descriptions-for-website-google-docs.pdf" target="_blank" rel="noreferrer noopener">here</a>.</p>
+
+<h4 class="class-description-heading teal" id="ArtExploration">Art Exploration</h4>
+<p>Instructor: Tracy Banaszynski<br>Ages 6 - 9<br>$140</p>
+<p>In this art exploration class, young artists are introduced to the basics of drawing and painting. Artists will explore line and value through observational drawing exercises using drawing media including graphite and charcoal. Students will also draw from imagination, exploring how their observational drawing skills can give greater freedom of expression to their creative ideas. Painting exercises, using tempera and acrylic paints, will help students learn about brush handling, color mixing, and composition. This class will engage children’s imaginations and build their observational skills in an environment that will nurture exploration, confidence, and joy. While basic drawing and painting skills will be taught, priority will be placed on process over product and on meeting each child where they are in their personal and artistic development. I look forward to making art together!</p>
+
+<h4 class="class-description-heading green" id="BuddingArtistsWorkshop">Budding Artists Workshop</h4>
+<p>Instructor: Tracy Banaszynski<br>Ages 3 - 6<br>$140</p>
+<p>In this art workshop, children are introduced to the elements of art, including shape, line, value, texture, and color. They will be encouraged to play with these ideas using a variety of age-appropriate, non-toxic materials. Each project will engage children’s imaginations and build their visual vocabulary. Projects will focus on process over product, while at the same time allowing a record of each child’s exploration and growth. The environment will nurture confidence, playfulness, and respect for each child’s process and work. Visual art ideas will be reinforced through story time and a movement activity that are linked to the workshop theme for that day. Let’s make art together!</p>
+
+<h4 class="class-description-heading pink" id="Carpentry68">Carpentry</h4>
+<p>Instructor: Kids&#8217; Carpentry<br>Ages 6 - 8<br>$200</p>
+<p>Kids&#8217; Carpentry is a hands-on toy building class designed to teach practical woodworking skills with an emphasis on the safe use of tools. Students will develop a repertoire of practical skills that will last a lifetime and construct fun projects that they will take home!</p>
+
+<h4 class="class-description-heading red" id="Carpentry912">Carpentry</h4>
+<p>Instructor: Kids&#8217; Carpentry<br>Ages 9 - 12<br>$200</p>
+<p>Kids&#8217; Carpentry is a hands-on toy building class designed to teach practical woodworking skills with an emphasis on the safe use of tools. Students will develop a repertoire of practical skills that will last a lifetime and construct fun projects that they will take home!</p>
+
+<h4 class="class-description-heading purple" id="CreativeDance">Creative Dance</h4>
+<p>Instructor: Miranda Veenhuysen<br>Ages 3 - 6<br>$128</p>
+<p>Burst! Spin! Float. Come fall in love with dance! Boys and girls expand their movement skills and explore dance concepts in this joyful, supportive classroom community. Instructor Miranda Veenhuysen is a lifelong dancer with ten years of teaching experience. She uses Anne Green Gilbert’s concept-based creative dance curriculum and Brain Dance warm up for this class. Participants should wear comfortable clothing and dance barefoot. Class may be cancelled 4/15 and 4/22.</p>
+
+<h4 class="class-description-heading lime" id="CulturalAnthropology">Cultural Anthropology</h4>
+<p>Instructor: Karen Radcliff<br>Ages 10 - 15<br>$140</p>
+<p>Anthropology is the study of humanity and its many ways of living, past and present. Cultural anthropology focuses on an exploration of humankind as it lives right now. In this class we will discuss the techniques anthropologists use to study many different aspects of human life: education, religion, family and reproduction, food, work, music, and more. Why do these differ from one culture to another? How does living in one place affect how you might think, what you value, what you wear, what you eat? We will explore some of the belief systems, social relationships, economic and environmental contexts, gender roles, and international and intercultural relationships of a number of cultures. We will also explore how our own various cultures can influence how we perceive others and their ways of life. There will be short weekly assignments and a presentation to the class at the end.</p>
+
+<h4 class="class-description-heading light-green" id="FundamentalsOfDrawing">Fundamentals of Drawing</h4>
+<p>Instructor: Ameen Dhillon<br>Ages 10 - 16<br>$150</p>
+<p>Drawing is the foundation for all visual arts. In this class students will take their drawing skills to the next level as they learn about line quality, shading, and perspective. We will work on these skills with a variety of subjects including people and still life. **A minimum of two parent volunteers are needed 10 minutes before and after class to help with set-up and clean-up. <em>No class on April 15th</em></p>
+
+<h4 class="class-description-heading blue" id="HandsOnMath">Hands On Math</h4>
+<p>Instructor: Marcia Miller<br>Ages 5 - 8<br>$145</p>
+<p>Do you enjoy patterns, shapes, numbers, games, stories, and hands-on activities? Join us as we explore a variety of mathematical ideas with materials such as pattern blocks, Cuisenaire rods, square color tiles and cubes, geoboards, two-colored counters, cards, and dice. We’ll play math games, talk about numbers, solve problems, read math-related children’s books, and have fun together!</p>
+
+<h4 class="class-description-heading light-blue" id="HandsOnMathInvestigations">Hands On Math Investigations</h4>
+<p>Instructor: Marcia Miller<br>Ages 8 - 11<br>$145</p>
+<p>Join us as we engage in a variety of hands-on mathematical investigations while playing with materials such as pattern blocks, square color tiles and cubes, fraction bars, Cuisenaire rods, and dice. We will work individually and in small groups, explore math topics and strategies together, and share what we find with the larger group. When investigating topics, we will begin with what we know and build on that to search for patterns, pose questions, and solve problems.</p>
+
+<h4 class="class-description-heading brown" id="HandsOnScience">Hands-On Science: Earth Science</h4>
+<p>Instructor: Molly Moench<br>Ages 6 - 9<br>$150</p>
+<p>Crashing waves, smashing tectonic plates, and howling winds; the layers of the earth are vibrant, active things. Come delve into this exciting world of earth science, and explore geology, meteorology, and hydrology through stories, activities, games and experiments.</p>
+
+<h4 class="class-description-heading indigo" id="Improv">Improv</h4>
+<p>Instructor: Nathan Drackett<br>Ages 11 - 16<br>$138</p>
+<p>Discover how much fun the unscripted life can be! Improv exercises and games will show this class how to gain confidence, think on the fly, and leave audiences laughing hysterically. Perfect for the inexperienced and experienced alike.</p>
+
+<h4 class="class-description-heading amber" id="IntroToLabScience">Intro to Lab Science: Physics</h4>
+<p>Instructor: Molly Moench<br>Ages 10 - 15<br>$140</p>
+<p>You and a friend are pulling opposite ends of a rope as hard as you can when your hands slip off. What happens? You rub your socks on the carpet as you head to answer the door. What’s awaiting your touch on the metal knob? You decide not to throw the brick straight up above your head. Why not? Physics holds the answers to these questions and more about the every day interactions of matter. Come explore the major principles of the universe such as force, motion, energy, electricity, momentum, and simple machines with an experiment each week.</p>
+
+<h4 class="class-description-heading cyan" id="JewelryMaking">Jewelry Making</h4>
+<p>Instructor: Amber Daub<br>Ages 7 - 11<br>$140</p>
+<p>Learn the basic skills to make various styles of jewelry. We will use different materials to create earrings, bracelets and necklaces as well as learning how to wire wrap and make simple pendants.</p>
+
+<h4 class="class-description-heading deep-purple" id="Parkour">Parkour: Efficiency in Action</h4>
+<p>Instructor: Nathan Drackett<br>Ages 8 - 16<br>$138</p>
+<p>Parkour: the art of moving efficiently through space. Do you like obstacle courses? Do your friends tell you to stop climbing on things? Do you want to awaken your inner monkey? Parkour may very well be for you. Students will use the safety of mats as well as real life obstacles to explore fluid movement in a safe and fun way. This class favors traditional parkour over “tricking” (tumbling, breakdancing, etc.), though some gymnastic skills may be explored.</p>
+
+<h4 class="class-description-heading deep-orange" id="SportsUnlimited">Sports Unlimited</h4>
+<p>Instructor: Rick Buyce<br>Ages 5 - 8<br>$108</p>
+<p>Sample a variety of individual and team sports. Fun movement games to get your little one active. Anything from creative &#8216;tag&#8217; games to basic skills in sports like soccer and anything in between. Your child will enjoy challenging their muscles, cardiovascular system, balance and coordination.</p>
+
+<h4 class="class-description-heading orange" id="UltimateFrisbee">Ultimate Frisbee</h4>
+<p>Instructor: Rick Buyce<br>Ages 9 - 16<br>$108</p>
+<p>Learn and play this non-contact team sport - an active game of running and passing, played with a disc (Frisbee). Come and join the fun as we learn and play one of the country’s fastest growing sports, Ultimate Frisbee! You will learn the basics of the sport and have a great time with your friends. We will teach the basics of throwing, catching, offense, defense, and how to work as a team. Enjoy the sunshine; get some fresh air and exercise.</p>
+
+<h4 class="class-description-heading yellow" id="WriteAChooseYourOwnAdventureStory">Write a Choose Your Own Adventure Story</h4>
+<p>Instructor: Molly Moench<br>Ages 9 - 12<br>$138</p>
+<p>Do you like “Choose Your Own Adventure” books? Do you like inventing stories? Come get your ideas on paper as we craft our own interactive tales. Students should be able to independently write a paragraph.</p>
+
+
+</div>
+<footer>
+	<div class="filler"></div>
+	<a href="#" class="back-to-top">Back to Top &#9650;</a>
+</footer>
+</body>
+</html>
