@@ -1,10 +1,10 @@
 - name: Home
   link: /
-- name: About
-  link: /about.html
 - name: Meet Our Teachers
   link: /meet-our-teachers.html
 - name: Spring 2024 Classes
   link: /quarters/spring-2024-classes.html
+- name: FAQ
+  link: /FAQ.html
 - name: Health and Safety Policy
   link: /health-and-safety-policy.html
