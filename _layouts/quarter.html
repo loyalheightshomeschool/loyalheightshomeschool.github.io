@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<p><strong>Wednesdays: {{ page.dates }}</strong></p>
+
+<p><strong>Registration opens {{ page.register }} at noon.</strong></p>
+
+<p>The LHH Committee will send reminders through our <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/loyalheightshomeschool">Facebook Page</a>, <a rel="noreferrer noopener" target="_blank" href="https://www.facebook.com/groups/687483054658790">Facebook Group</a>, and <a rel="noreferrer noopener" target="_blank" href="https://groups.google.com/g/loyalheightshomeschool">Google Email Group</a> to spread the word about registering. Classes can fill quickly, so it is best to register early. In cases of low enrollment, classes may be cancelled up to two weeks before the session begins. For the sake of the teachers and other students, please try and register early!</p>
+
+<p><strong>There are three ways to register for classes:</strong></p>
+
+<ol>
+<li>Online: Visit the <a rel="noreferrer noopener" target="_blank" href="https://anc.apm.activecommunities.com/seattle/activity/search?activity_select_param=2&amp;activity_keyword=homeschool&amp;viewMode=list">Seattle Parks and Recreation website</a>.</li>
+<li>By phone: Call the Loyal Heights Community Center at (206) 684-4052.</li>
+<li>In person: Go to any Seattle Community Center and register in person at the front desk.</li>
+</ol>
+
+<p><strong>Note:</strong> All classes subject to cancellation or change. Please make sure you are on the Google Email Group for timely announcements (At this time, all students are encouraged, but not required, to wear masks during classes.</p>
+
+<p>Please view our community’s <a href="{% link health-and-safety-policy.md %}">Health and Safety Policy</a>.</p>
+
+<h2>Schedule</h2>
+
+<p><a rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>
+
+<div class="tabs">
+  <input type="radio" name="tabs" id="Monday">
+  <label for="Monday">Monday</label>
+  <input type="radio" name="tabs" id="Tuesday">
+  <label for="Tuesday">Tuesday</label>
+  <input type="radio" name="tabs" id="Wednesday" checked>
+  <label for="Wednesday">Wednesday</label>
+  <input type="radio" name="tabs" id="Thursday">
+  <label for="Thursday">Thursday</label>
+  <input type="radio" name="tabs" id="Friday">
+  <label for="Friday">Friday</label>
+<div id="WednesdaySchedule" class="schedule">
+{% include schedule.html %}
+
+<div class="col2-8 row7 cell break">Lunch Break</div>
+<a class="col7 row8-13 cell break" href="#ParkPlay">Park Play</a>
+<div class="col6 row10-13 cell break">Open Gym</div>
+{% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == 'Wednesday' %}
+<a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %} cell" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">{{ class.class_name }}<br>
+  {{ class.teacher_name }}<br>
+  Ages: {{ class.ages }}<br>
+  ${{ class.class_price }}
+  <br>{{ class.exceptions }}
+</a>
+{% endif %}{% endfor %}
+</div>
+</div>
+
+<h2>Descriptions</h2>
+
+<p><a rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>
+
+<h3>Wednesdays</h3>
+
+<div class="descriptions">
+{% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
+<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="description">
+  <h4>{{ class.class_name }}{% if class.status %} - <mark>{{ class.status }}</mark>{% endif %}</h4>
+  <p>
+    Instructor: <a href="/meet-our-teachers.html#{{ class.teacher_name | downcase | replace: " ", "-" }}">{{ class.teacher_name }}</a><br>
+    Ages: {{ class.ages }}<br>
+    Maximum class size: {{ class.maximum_students }}<br>
+    ${{ class.class_price }}
+    {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
+    {% if class.link %}<br><a rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll in {{ class.class_name }}</a>{% endif %}
+  </p>
+  <p>
+    {{ class.description }}
+  </p>
+</div>
+{% endif %}{% endfor %}
+</div>
