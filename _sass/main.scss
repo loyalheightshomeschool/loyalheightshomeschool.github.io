@@ -23,6 +23,7 @@ body > nav {
   gap: 4px;
   width: min-content;
   margin: 0 auto;
+  overflow-x: scroll;
 }
 .schedule > .cell {
   border: 2px #000000 solid;
