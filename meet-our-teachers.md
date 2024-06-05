@@ -1,7 +1,7 @@
 ---
 title: Meet Our Teachers
 ---
-{% for teacher in site.data.teachers %}
+{% for teacher in site.data.teachers %}{% if teacher.active == "t" %}
 
 ## {{ teacher.name }}
 
@@ -10,5 +10,4 @@ title: Meet Our Teachers
 {{ teacher.biography }}
 
 ---
-
-{% endfor %}
+{% endif %}{% endfor %}
