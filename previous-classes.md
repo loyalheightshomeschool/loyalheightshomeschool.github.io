@@ -31,6 +31,6 @@ title: Previous Classes
 
 ## 2018 - 2019
 
-- [Spring 2019](/quarters/spring-2024-classes.html)
-- [Winter 2019](/quarters/winter-2024-classes.html)
-- [Fall 2018](/quarters/fall-2023-classes.html)
+- [Spring 2019](/quarters/spring-2019-classes.html)
+- [Winter 2019](/quarters/winter-2019-classes.html)
+- [Fall 2018](/quarters/fall-2018-classes.html)
