@@ -1,17 +1,39 @@
+@media (width <= 599px) {
+  body {
+    margin: 0 16px;
+  }
+}
+@media (600px <= width <= 632px) {
+  body {
+    width: 568px;
+    margin: 0 auto;
+  }
+}
+@media (633px <= width <= 904px) {
+  body {
+    margin: 0 32px;
+  }
+}
+@media (905px <= width <= 1239px) {
+  body {
+    width: 840px;
+    margin: 0 auto;
+  }
+}
+@media (1240px <= width <= 1439px) {
+  body {
+    margin: 0 200px;
+  }
+}
+@media (1440px <= width) {
+  body {
+    width: 1040px;
+    margin: 0 auto;
+  }
+}
 body {
   font-family: sans-serif;
   font-size: 16px;
-}
-body > * {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 16px;
-}
-body > h1 {
-  max-width: 1200px;
-}
-body > nav {
-  max-width: 1200px;
 }
 .button {
   font-size: 14px;
