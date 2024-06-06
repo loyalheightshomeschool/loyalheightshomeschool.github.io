@@ -7,7 +7,6 @@ layout: default
 <p><strong>Note:</strong> All classes subject to cancellation or change. Please make sure you are on the <a href="https://groups.google.com/g/loyalheightshomeschool" target="_blank" rel="noreferrer noopener">Google Email Group</a> for timely announcements.</p>
 
 <h2>Schedule</h2>
-{% if page.schedule %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
 <div class="tabs">
   <input type="radio" name="tabs" id="Monday">
   <label for="Monday">Monday</label>
@@ -22,9 +21,6 @@ layout: default
 <div id="WednesdaySchedule" class="schedule">
 {% include schedule.html %}
 
-<div class="col2-8 row7 cell break">Lunch Break</div>
-<a class="col7 row8-13 cell break" href="#ParkPlay">Park Play</a>
-<div class="col6 row10-13 cell break">Open Gym</div>
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == 'Wednesday' %}
 <a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %} cell" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">{{ class.class_name }}<br>
   {{ class.teacher_name }}<br>
@@ -35,7 +31,7 @@ layout: default
 {% endif %}{% endfor %}
 </div>
 </div>
-
+{% if page.schedule %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
 <h2>Descriptions</h2>
 {% if page.descriptions %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
 <h3>Wednesdays</h3>
