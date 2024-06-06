@@ -17,14 +17,14 @@ body > nav {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1.25px;
-  text-transform: upper-case;
+  text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
   padding: 8px;
-  background-color: blue;
+  background-color: LightGreen;
 }
 .current {
-  background-color: yellow;
+  background-color: LightYellow;
 }
 .schedule {
   display: grid;
