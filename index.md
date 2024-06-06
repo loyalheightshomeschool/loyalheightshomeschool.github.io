@@ -24,11 +24,3 @@ Participating families should join our Google Email Group and Facebook group to 
 ### Newcomers
 
 If you are a newcomer interested in our program and would like to learn more, we encourage you to come in person to check it out. The majority of families are typically at the Loyal Heights Community Center from around 10:00 am to 3:00 pm on Wednesdays when classes are being held. If you would like someone to greet you when you arrive, please email loyalheightshomeschool@gmail.com in advance of the day you plan to come. We will make sure one of our parent volunteers is available to give you a tour, answer questions, and introduce you to other families.
-
-**Registration for Fall 2024 opens TBD at noon.**
-
-## 2024-25 Program Dates:
-
-- [FALL 2024]({% link _quarters/2023-fall.html %}): September 20 – November 15, 2023 (9 weeks)
-- [WINTER 2025]({% link _quarters/2024-winter.html %}): January 10 – March 13, 2024 (No Class February 21; 9 weeks)
-- [SPRING 2025]({% link _quarters/2024-spring.html %}): March 27 – May 29, 2024 (No Class April 10; 9 weeks)
