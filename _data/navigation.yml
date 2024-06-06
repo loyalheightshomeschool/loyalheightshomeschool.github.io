@@ -1,12 +1,12 @@
 - name: Home
   link: /
-- name: Spring Classes
-  link: /quarters/spring-2025-classes.html
-- name: Winter Classes
-  link: /quarters/winter-2025-classes.html
 - name: Fall Classes
   link: /quarters/fall-2024-classes.html
-- name: Previous Classes
-  link: /previous-classes.html
+- name: Winter Classes
+  link: /quarters/winter-2025-classes.html
+- name: Spring Classes
+  link: /quarters/spring-2025-classes.html
 - name: FAQ
   link: /faq.html
+- name: Previous Classes
+  link: /previous-classes.html
