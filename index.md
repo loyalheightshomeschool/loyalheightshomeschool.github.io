@@ -29,6 +29,6 @@ If you are a newcomer interested in our program and would like to learn more, we
 
 ## 2024-25 Program Dates:
 
-- [FALL 2024]({% link _quarters/fall-2023-classes.html %}): September 20 – November 15, 2023 (9 weeks)
-- [WINTER 2025]({% link _quarters/winter-2024-classes.html %}): January 10 – March 13, 2024 (No Class February 21; 9 weeks)
-- [SPRING 2025]({% link _quarters/spring-2024-classes.html %}): March 27 – May 29, 2024 (No Class April 10; 9 weeks)
+- [FALL 2024]({% link _quarters/2023-fall.html %}): September 20 – November 15, 2023 (9 weeks)
+- [WINTER 2025]({% link _quarters/2024-winter.html %}): January 10 – March 13, 2024 (No Class February 21; 9 weeks)
+- [SPRING 2025]({% link _quarters/2024-spring.html %}): March 27 – May 29, 2024 (No Class April 10; 9 weeks)
