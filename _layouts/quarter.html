@@ -22,6 +22,10 @@ layout: default
 {% assign thu = false %}
 {% assign fri = false %}
 
+{% assign hour = false %}
+{% assign half_hour = false %}
+{% assign quarter_hour = false %}
+
 {% for class in site.data.classes %}{% if class.quarter == page.data %}
 
   {% case class.room %}
@@ -56,22 +60,45 @@ layout: default
       {% assign fri = true %}
   {% endcase %}
 
+  {% case class.start_time %}
+    {% when "9", "10", "11", "12", "1", "2", "3", "4"}
+      {% assign hour = true %}
+    {% when "9.5", "10.5", "11.5", "12.5", "1.5", "2.5", "3.5", "4.5"}
+      {% assign half_hour = true %}
+    {% when "9.25", "9.75", "10.25", "10.75", "11.25", "11.75", "12.25", "12.75", "1.25", "1.75", "2.25", "2.75", "3.25", "3.75", "4.25", "4.75"}
+      {% assign quarter_hour = true %}
+  {% endcase %}
+
+  {% case class.end_time %}
+    {% when "9", "10", "11", "12", "1", "2", "3", "4"}
+      {% assign hour = true %}
+    {% when "9.5", "10.5", "11.5", "12.5", "1.5", "2.5", "3.5", "4.5"}
+      {% assign half_hour = true %}
+    {% when "9.25", "9.75", "10.25", "10.75", "11.25", "11.75", "12.25", "12.75", "1.25", "1.75", "2.25", "2.75", "3.25", "3.75", "4.25", "4.75"}
+      {% assign quarter_hour = true %}
+  {% endcase %}
+
 {% endif %}{% endfor %}
 
-{{ room_1 }}
-{{ room_2 }}
-{{ room_3 }}
-{{ room_4 }}
-{{ gym }}
-{{ kitchen }}
-{{ outside }}
-{{ offsite }}
+Room 1 {{ room_1 }}
+Room 2 {{ room_2 }}
+Room 3 {{ room_3 }}
+Room 4 {{ room_4 }}
+Gym {{ gym }}
+Kitchen {{ kitchen }}
+Outside {{ outside }}
+Offsite {{ offsite }}
 
-{{ mon }}
-{{ tue }}
-{{ wed }}
-{{ thu }}
-{{ fri }}
+Monday {{ mon }}
+Tuesday {{ tue }}
+Wednesday {{ wed }}
+Thursday {{ thu }}
+Friday {{ fri }}
+
+Hour {{ hour }}
+Half Hour {{ half_hour }}
+Quarter Hour {{ quarter_hour }}
+
 <div class="tabs">
   <input type="radio" name="tabs" id="Monday">
   <label for="Monday">Monday</label>
