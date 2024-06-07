@@ -7,97 +7,188 @@ layout: default
 <p><strong>Note:</strong> All classes subject to cancellation or change. Please make sure you are on the <a href="https://groups.google.com/g/loyalheightshomeschool" target="_blank" rel="noreferrer noopener">Google Email Group</a> for timely announcements.</p>
 
 <h2>Schedule</h2>
-{% assign room_1 = false %}
-{% assign room_2 = false %}
-{% assign room_3 = false %}
-{% assign room_4 = false %}
-{% assign gym = false %}
-{% assign kitchen = false %}
-{% assign outside = false %}
-{% assign offsite = false %}
-
-{% assign mon = false %}
-{% assign tue = false %}
-{% assign wed = false %}
-{% assign thu = false %}
-{% assign fri = false %}
-
-{% assign hour = false %}
-{% assign half_hour = false %}
-{% assign quarter_hour = false %}
-
+{% assign mo = false %}
+{% assign tu = false %}
+{% assign we = false %}
+{% assign th = false %}
+{% assign fr = false %}
+{% assign mo_hf_hr = false %}{% assign tu_hf_hr = false %}{% assign we_hf_hr = false %}{% assign th_hf_hr = false %}{% assign fr_hf_hr = false %}
+{% assign mo_qt_hr = false %}{% assign tu_qt_hr = false %}{% assign we_qt_hr = false %}{% assign th_qt_hr = false %}{% assign fr_qt_hr = false %}
+{% assign mo_rm_1 = false %}{% assign tu_rm_1 = false %}{% assign we_rm_1 = false %}{% assign th_rm_1 = false %}{% assign fr_rm_1 = false %}
+{% assign mo_rm_2 = false %}{% assign tu_rm_2 = false %}{% assign we_rm_2 = false %}{% assign th_rm_2 = false %}{% assign fr_rm_2 = false %}
+{% assign mo_rm_3 = false %}{% assign tu_rm_3 = false %}{% assign we_rm_3 = false %}{% assign th_rm_3 = false %}{% assign fr_rm_3 = false %}
+{% assign mo_rm_4 = false %}{% assign tu_rm_4 = false %}{% assign we_rm_4 = false %}{% assign th_rm_4 = false %}{% assign fr_rm_4 = false %}
+{% assign mo_gym = false %}{% assign tu_gym = false %}{% assign we_gym = false %}{% assign th_gym = false %}{% assign fr_gym = false %}
+{% assign mo_kit = false %}{% assign tu_kit = false %}{% assign we_kit = false %}{% assign th_kit = false %}{% assign fr_kit = false %}
+{% assign mo_out = false %}{% assign tu_out = false %}{% assign we_out = false %}{% assign th_out = false %}{% assign fr_out = false %}
+{% assign mo_off = false %}{% assign tu_off = false %}{% assign we_off = false %}{% assign th_off = false %}{% assign fr_off = false %}
 {% for class in site.data.classes %}{% if class.quarter == page.data %}
-
+  {% case class.day_of_the_week %}
+    {% when "Monday" %}{% assign mo = true %}
+    {% when "Tuesday" %}{% assign tu = true %}
+    {% when "Wednesday" %}{% assign we = true %}
+    {% when "Thursday" %}{% assign th = true %}
+    {% when "Friday" %}{% assign fr = true %}
+  {% endcase %}
   {% case class.room %}
     {% when "Room 1" %}
-      {% assign room_1 = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_rm_1 = true %}
+        {% when "Tuesday" %}{% assign tu_rm_1 = true %}
+        {% when "Wednesday" %}{% assign we_rm_1 = true %}
+        {% when "Thursday" %}{% assign th_rm_1 = true %}
+        {% when "Friday" %}{% assign fr_rm_1 = true %}
+      {% endcase %}
     {% when "Room 2" %}
-      {% assign room_2 = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_rm_2 = true %}
+        {% when "Tuesday" %}{% assign tu_rm_2 = true %}
+        {% when "Wednesday" %}{% assign we_rm_2 = true %}
+        {% when "Thursday" %}{% assign th_rm_2 = true %}
+        {% when "Friday" %}{% assign fr_rm_2 = true %}
+      {% endcase %}
     {% when "Room 3" %}
-      {% assign room_3 = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_rm_3 = true %}
+        {% when "Tuesday" %}{% assign tu_rm_3 = true %}
+        {% when "Wednesday" %}{% assign we_rm_3 = true %}
+        {% when "Thursday" %}{% assign th_rm_3 = true %}
+        {% when "Friday" %}{% assign fr_rm_3 = true %}
+      {% endcase %}
     {% when "Room 4" %}
-      {% assign room_4 = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_rm_4 = true %}
+        {% when "Tuesday" %}{% assign tu_rm_4 = true %}
+        {% when "Wednesday" %}{% assign we_rm_4 = true %}
+        {% when "Thursday" %}{% assign th_rm_4 = true %}
+        {% when "Friday" %}{% assign fr_rm_4 = true %}
+      {% endcase %}
     {% when "Gym" %}
-      {% assign gym = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_gym = true %}
+        {% when "Tuesday" %}{% assign tu_gym = true %}
+        {% when "Wednesday" %}{% assign we_gym = true %}
+        {% when "Thursday" %}{% assign th_gym = true %}
+        {% when "Friday" %}{% assign fr_gym = true %}
+      {% endcase %}
     {% when "Kitchen" %}
-      {% assign kitchen = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_kit = true %}
+        {% when "Tuesday" %}{% assign tu_kit = true %}
+        {% when "Wednesday" %}{% assign we_kit = true %}
+        {% when "Thursday" %}{% assign th_kit = true %}
+        {% when "Friday" %}{% assign fr_kit = true %}
+      {% endcase %}
     {% when "Outside" %}
-      {% assign outside = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_out = true %}
+        {% when "Tuesday" %}{% assign tu_out = true %}
+        {% when "Wednesday" %}{% assign we_out = true %}
+        {% when "Thursday" %}{% assign th_out = true %}
+        {% when "Friday" %}{% assign fr_out = true %}
+      {% endcase %}
     {% when "Offsite" %}
-      {% assign offsite = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_off = true %}
+        {% when "Tuesday" %}{% assign tu_off = true %}
+        {% when "Wednesday" %}{% assign we_off = true %}
+        {% when "Thursday" %}{% assign th_off = true %}
+        {% when "Friday" %}{% assign fr_off = true %}
+      {% endcase %}
   {% endcase %}
-
-  {% case class.day_of_the_week %}
-    {% when "Monday" %}
-      {% assign mon = true %}
-    {% when "Tuesday" %}
-      {% assign tue = true %}
-    {% when "Wednesday" %}
-      {% assign wed = true %}
-    {% when "Thursday" %}
-      {% assign thu = true %}
-    {% when "Friday" %}
-      {% assign fri = true %}
-  {% endcase %}
-
   {% case class.start_time %}
-    {% when "9", "10", "11", "12", "1", "2", "3", "4" %}
-      {% assign hour = true %}
     {% when "9.5", "10.5", "11.5", "12.5", "1.5", "2.5", "3.5", "4.5" %}
-      {% assign half_hour = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_hf_hr = true %}
+        {% when "Tuesday" %}{% assign tu_hf_hr = true %}
+        {% when "Wednesday" %}{% assign we_hf_hr = true %}
+        {% when "Thursday" %}{% assign th_hf_hr = true %}
+        {% when "Friday" %}{% assign fr_hf_hr = true %}
+      {% endcase %}
     {% when "9.25", "9.75", "10.25", "10.75", "11.25", "11.75", "12.25", "12.75", "1.25", "1.75", "2.25", "2.75", "3.25", "3.75", "4.25", "4.75" %}
-      {% assign quarter_hour = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_qt_hr = true %}
+        {% when "Tuesday" %}{% assign tu_qt_hr = true %}
+        {% when "Wednesday" %}{% assign we_qt_hr = true %}
+        {% when "Thursday" %}{% assign th_qt_hr = true %}
+        {% when "Friday" %}{% assign fr_qt_hr = true %}
+      {% endcase %}
   {% endcase %}
-
   {% case class.end_time %}
-    {% when "9", "10", "11", "12", "1", "2", "3", "4" %}
-      {% assign hour = true %}
     {% when "9.5", "10.5", "11.5", "12.5", "1.5", "2.5", "3.5", "4.5" %}
-      {% assign half_hour = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_hf_hr = true %}
+        {% when "Tuesday" %}{% assign tu_hf_hr = true %}
+        {% when "Wednesday" %}{% assign we_hf_hr = true %}
+        {% when "Thursday" %}{% assign th_hf_hr = true %}
+        {% when "Friday" %}{% assign fr_hf_hr = true %}
+      {% endcase %}
     {% when "9.25", "9.75", "10.25", "10.75", "11.25", "11.75", "12.25", "12.75", "1.25", "1.75", "2.25", "2.75", "3.25", "3.75", "4.25", "4.75" %}
-      {% assign quarter_hour = true %}
+      {% case class.day_of_the_week %}
+        {% when "Monday" %}{% assign mo_qt_hr = true %}
+        {% when "Tuesday" %}{% assign tu_qt_hr = true %}
+        {% when "Wednesday" %}{% assign we_qt_hr = true %}
+        {% when "Thursday" %}{% assign th_qt_hr = true %}
+        {% when "Friday" %}{% assign fr_qt_hr = true %}
+      {% endcase %}
   {% endcase %}
-
 {% endif %}{% endfor %}
 
-Room 1 {{ room_1 }}
-Room 2 {{ room_2 }}
-Room 3 {{ room_3 }}
-Room 4 {{ room_4 }}
-Gym {{ gym }}
-Kitchen {{ kitchen }}
-Outside {{ outside }}
-Offsite {{ offsite }}
-
-Monday {{ mon }}
-Tuesday {{ tue }}
-Wednesday {{ wed }}
-Thursday {{ thu }}
-Friday {{ fri }}
-
-Hour {{ hour }}
-Half Hour {{ half_hour }}
-Quarter Hour {{ quarter_hour }}
+mo {{ mo }}<br>
+tu {{ tu }}<br>
+we {{ we }}<br>
+th {{ th }}<br>
+fr {{ fr }}<br>
+mo_hf_hr {{ mo_hf_hr }}<br>
+tu_hf_hr {{ tu_hf_hr }}<br>
+we_hf_hr {{ we_hf_hr }}<br>
+th_hf_hr {{ th_hf_hr }}<br>
+fr_hf_hr {{ fr_hf_hr }}<br>
+mo_qt_hr {{ mo_qt_hr }}<br>
+tu_qt_hr {{ tu_qt_hr }}<br>
+we_qt_hr {{ we_qt_hr }}<br>
+th_qt_hr {{ th_qt_hr }}<br>
+fr_qt_hr {{ fr_qt_hr }}<br>
+mo_rm_1 {{ mo_rm_1 }}<br>
+tu_rm_1 {{ tu_rm_1 }}<br>
+we_rm_1 {{ we_rm_1 }}<br>
+th_rm_1 {{ th_rm_1 }}<br>
+fr_rm_1 {{ fr_rm_1 }}<br>
+mo_rm_2 {{ mo_rm_2 }}<br>
+tu_rm_2 {{ tu_rm_2 }}<br>
+we_rm_2 {{ we_rm_2 }}<br>
+th_rm_2 {{ th_rm_2 }}<br>
+fr_rm_2 {{ fr_rm_2 }}<br>
+mo_rm_3 {{ mo_rm_3 }}<br>
+tu_rm_3 {{ tu_rm_3 }}<br>
+we_rm_3 {{ we_rm_3 }}<br>
+th_rm_3 {{ th_rm_3 }}<br>
+fr_rm_3 {{ fr_rm_3 }}<br>
+mo_rm_4 {{ mo_rm_4 }}<br>
+tu_rm_4 {{ tu_rm_4 }}<br>
+we_rm_4 {{ we_rm_4 }}<br>
+th_rm_4 {{ th_rm_4 }}<br>
+fr_rm_4 {{ fr_rm_4 }}<br>
+mo_gym {{ mo_gym }}<br>
+tu_gym {{ tu_gym }}<br>
+we_gym {{ we_gym }}<br>
+th_gym {{ th_gym }}<br>
+fr_gym {{ fr_gym }}<br>
+mo_kit {{ mo_kit }}<br>
+tu_kit {{ tu_kit }}<br>
+we_kit {{ we_kit }}<br>
+th_kit {{ th_kit }}<br>
+fr_kit {{ fr_kit }}<br>
+mo_out {{ mo_out }}<br>
+tu_out {{ tu_out }}<br>
+we_out {{ we_out }}<br>
+th_out {{ th_out }}<br>
+fr_out {{ fr_out }}<br>
+mo_off {{ mo_off }}<br>
+tu_off {{ tu_off }}<br>
+we_off {{ we_off }}<br>
+th_off {{ th_off }}<br>
+fr_off {{ fr_off }}<br>
 
 <div class="tabs">
   <input type="radio" name="tabs" id="Monday">
