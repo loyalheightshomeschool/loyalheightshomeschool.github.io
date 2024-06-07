@@ -134,11 +134,6 @@ layout: default
   {% endcase %}
 {% endif %}{% endfor %}
 
-mo {{ mo }}<br>
-tu {{ tu }}<br>
-we {{ we }}<br>
-th {{ th }}<br>
-fr {{ fr }}<br>
 mo_hf_hr {{ mo_hf_hr }}<br>
 tu_hf_hr {{ tu_hf_hr }}<br>
 we_hf_hr {{ we_hf_hr }}<br>
@@ -191,16 +186,11 @@ th_off {{ th_off }}<br>
 fr_off {{ fr_off }}<br>
 
 <div class="tabs">
-  <input type="radio" name="tabs" id="Monday">
-  <label for="Monday">Monday</label>
-  <input type="radio" name="tabs" id="Tuesday">
-  <label for="Tuesday">Tuesday</label>
-  <input type="radio" name="tabs" id="Wednesday" checked>
-  <label for="Wednesday">Wednesday</label>
-  <input type="radio" name="tabs" id="Thursday">
-  <label for="Thursday">Thursday</label>
-  <input type="radio" name="tabs" id="Friday">
-  <label for="Friday">Friday</label>
+  {% if mo %}<input type="radio" name="tabs" id="Monday"><label for="Monday">Monday</label>{% endif %}
+  {% if tu %}<input type="radio" name="tabs" id="Tuesday"><label for="Tuesday">Tuesday</label>{% endif %}
+  {% if we %}<input type="radio" name="tabs" id="Wednesday" checked><label for="Wednesday">Wednesday</label>{% endif %}
+  {% if th %}<input type="radio" name="tabs" id="Thursday"><label for="Thursday">Thursday</label>{% endif %}
+  {% if fr %}<input type="radio" name="tabs" id="Friday"><label for="Friday">Friday</label>{% endif %}
 <div id="WednesdaySchedule" class="schedule">
 {% include schedule.html %}
 
