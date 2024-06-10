@@ -23,8 +23,8 @@ The LHH program provides a sense of community among homeschooling families as we
       <label for="msg">Message:</label>
       <textarea id="msg" name="user_message">Message</textarea>
     </li>
-    <li class="button">
-      <button type="submit">Send your message</button>
+    <li>
+      <button class="button" type="submit">Send your message</button>
     </li>
   </ul>
 </form>
