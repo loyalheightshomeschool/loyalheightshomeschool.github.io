@@ -9,7 +9,25 @@ The LHH program provides a sense of community among homeschooling families as we
 
 ## Contact
 
-LHH meets in the Loyal Heights neighborhood of Seattle, WA, just north of Ballard.
+<form method="get">
+  <ul>
+    <li>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user_name" value="Name" />
+    </li>
+    <li>
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" name="user_email"  value="Email" />
+    </li>
+    <li>
+      <label for="msg">Message:</label>
+      <textarea id="msg" name="user_message">Message</textarea>
+    </li>
+    <li class="button">
+      <button type="submit">Send your message</button>
+    </li>
+  </ul>
+</form>
 
 **Location:** Loyal Heights Community Center
 2101 NW 77th St
@@ -17,9 +35,9 @@ Seattle, WA 98117
 
 **Email:** loyalheightshomeschool@gmail.com
 
-Participating families should join our Google Email Group and Facebook group to stay informed about classes, events and activities, and to connect with fellow LHH homeschoolers.
+**Google Group**: 
 
-“Like” our Facebook Page to see our upcoming class schedules and public events.
+**Facebook Group**:
 
 ### Newcomers
 
