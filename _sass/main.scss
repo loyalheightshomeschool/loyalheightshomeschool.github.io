@@ -39,17 +39,16 @@ body {
   font-size: 14px;
   height: 32px;
   display: inline-block;
-  padding: 8px 16px;
+  padding: 0 16px;
+  margin: 0;
+  vertical-align: middle;
   border-radius: 2px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  background-color: #1B5E20;
+  background-color: #2E7D32;
   color: white;
-}
-.current {
-  background-color: LightYellow;
 }
 .schedule {
   display: grid;
