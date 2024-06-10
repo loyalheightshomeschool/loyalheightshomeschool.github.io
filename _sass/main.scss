@@ -37,13 +37,17 @@ body {
 }
 .button {
   font-size: 14px;
+  height: 36px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 2px;
   line-height: 20px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
-  padding: 8px;
-  background-color: LightGreen;
+  background-color: #1B5E20;
+  color: white;
 }
 .current {
   background-color: LightYellow;
