@@ -51,7 +51,7 @@ body {
 .schedule {
   display: grid;
   grid-auto-rows: 48px;
-  grid-auto-columns: max-content;
+  grid-auto-columns: auto;
   gap: 4px;
   width: 100%;
   margin: 0 auto;
