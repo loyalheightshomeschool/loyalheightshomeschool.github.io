@@ -4,10 +4,6 @@ layout: default
 {% if page.dates %}<p><strong>Wednesdays: {{ page.dates }}</strong></p>{% endif %}
 {% if page.register %}<p><strong>Registration opens {{ page.register }} at noon.</strong></p>{% endif %}
 
-<p><strong>Note:</strong> All classes subject to cancellation or change. Please make sure you are on the <a href="https://groups.google.com/g/loyalheightshomeschool" target="_blank" rel="noreferrer noopener">Google Email Group</a> for timely announcements.</p>
-
-<h2>Schedule</h2>
-{% assign mo = false %}
 {% assign tu = false %}
 {% assign we = false %}
 {% assign th = false %}
@@ -133,57 +129,6 @@ layout: default
       {% endcase %}
   {% endcase %}
 {% endif %}{% endfor %}
-
-mo_hf_hr {{ mo_hf_hr }}<br>
-tu_hf_hr {{ tu_hf_hr }}<br>
-we_hf_hr {{ we_hf_hr }}<br>
-th_hf_hr {{ th_hf_hr }}<br>
-fr_hf_hr {{ fr_hf_hr }}<br>
-mo_qt_hr {{ mo_qt_hr }}<br>
-tu_qt_hr {{ tu_qt_hr }}<br>
-we_qt_hr {{ we_qt_hr }}<br>
-th_qt_hr {{ th_qt_hr }}<br>
-fr_qt_hr {{ fr_qt_hr }}<br>
-mo_rm_1 {{ mo_rm_1 }}<br>
-tu_rm_1 {{ tu_rm_1 }}<br>
-we_rm_1 {{ we_rm_1 }}<br>
-th_rm_1 {{ th_rm_1 }}<br>
-fr_rm_1 {{ fr_rm_1 }}<br>
-mo_rm_2 {{ mo_rm_2 }}<br>
-tu_rm_2 {{ tu_rm_2 }}<br>
-we_rm_2 {{ we_rm_2 }}<br>
-th_rm_2 {{ th_rm_2 }}<br>
-fr_rm_2 {{ fr_rm_2 }}<br>
-mo_rm_3 {{ mo_rm_3 }}<br>
-tu_rm_3 {{ tu_rm_3 }}<br>
-we_rm_3 {{ we_rm_3 }}<br>
-th_rm_3 {{ th_rm_3 }}<br>
-fr_rm_3 {{ fr_rm_3 }}<br>
-mo_rm_4 {{ mo_rm_4 }}<br>
-tu_rm_4 {{ tu_rm_4 }}<br>
-we_rm_4 {{ we_rm_4 }}<br>
-th_rm_4 {{ th_rm_4 }}<br>
-fr_rm_4 {{ fr_rm_4 }}<br>
-mo_gym {{ mo_gym }}<br>
-tu_gym {{ tu_gym }}<br>
-we_gym {{ we_gym }}<br>
-th_gym {{ th_gym }}<br>
-fr_gym {{ fr_gym }}<br>
-mo_kit {{ mo_kit }}<br>
-tu_kit {{ tu_kit }}<br>
-we_kit {{ we_kit }}<br>
-th_kit {{ th_kit }}<br>
-fr_kit {{ fr_kit }}<br>
-mo_out {{ mo_out }}<br>
-tu_out {{ tu_out }}<br>
-we_out {{ we_out }}<br>
-th_out {{ th_out }}<br>
-fr_out {{ fr_out }}<br>
-mo_off {{ mo_off }}<br>
-tu_off {{ tu_off }}<br>
-we_off {{ we_off }}<br>
-th_off {{ th_off }}<br>
-fr_off {{ fr_off }}<br>
 
 <div class="tabs">
   {% if mo %}<input type="radio" name="tabs" id="Monday"><label for="Monday">Monday</label>{% endif %}
