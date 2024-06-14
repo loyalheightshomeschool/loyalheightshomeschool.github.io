@@ -32,14 +32,14 @@ $inverse-primary: #a1d399;
 $scrim: #000000;
 $shadow: #000000;
 
-@mixin label-small { font-size: 12px; font-weight: bold; line-height: 16px; letter-spacing: 0.5px }
-@mixin label-medium { font-size: 14px; font-weight: bold; line-height: 20px; letter-spacing: 0.1px }
-@mixin label-large { font-size: 16px; font-weight: bold; line-height: 24px; letter-spacing: 0.5px }
+@mixin label-small { font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: 0.5px }
+@mixin label-medium { font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.1px }
+@mixin label-large { font-size: 16px; font-weight: 600; line-height: 24px; letter-spacing: 0.5px }
 @mixin body-small { font-size: 14px; line-height: 20px; letter-spacing: 0.25px }
 @mixin body-medium { font-size: 16px; line-height: 24px; letter-spacing: 0.5px }
 @mixin body-large { font-size: 18px; line-height: 26px }
-@mixin title-small { font-size: 16px; font-weight: bold; line-height: 24px; letter-spacing: 0.15px }
-@mixin title-medium { font-size: 18px; font-weight: bold; line-height: 26px }
+@mixin title-small { font-size: 16px; font-weight: 600; line-height: 24px; letter-spacing: 0.15px }
+@mixin title-medium { font-size: 18px; font-weight: 600; line-height: 26px }
 @mixin title-large { font-size: 24px; line-height: 32px }
 @mixin headline-small { font-size: 28px; line-height: 36px }
 @mixin headline-medium { font-size: 32px; line-height: 40px }
@@ -241,4 +241,7 @@ body {
     height: 40px;
     @include label-large;
   }
+  & answer {
+    @include body-medium;
+    padding: 8px 16px;
 }
