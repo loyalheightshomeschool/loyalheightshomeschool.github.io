@@ -1,3 +1,37 @@
+$primary: #3c6939;
+$on-primary: #ffffff;
+$primary-container: #bcf0b4;
+$on-primary-container: #002203;
+$secondary: #53634f;
+$on-secondary: #ffffff;
+$secondary-container: #d6e8ce;
+$on-secondary-container: #111f0f;
+$tertiary: #38656a;
+$on-tertiary: #ffffff;
+$tertiary-container: #bcebf0;
+$on-tertiary-container: #002023;
+$error: #ba1a1a;
+$on-error: #ffffff;
+$error-container: #ffdad6;
+$on-error-container: #410002;
+$surface-dim: #d8dbd2;
+$surface: #f7fbf1;
+$surface-bright: #f7fbf1;
+$surface-container-lowest: #ffffff;
+$surface-container-low: #f1f5eb;
+$surface-container: #ecefe6;
+$surface-container-high: #e6e9e0;
+$surface-container-highest: #e0e4db;
+$on-surface: #191d17;
+$on-surface-variant: #424940;
+$outline: #72796f;
+$outline-variant: #c2c9bd;
+$inverse-surface: #2d322c;
+$inverse-on-surface: #eff2e9;
+$inverse-primary: #a1d399;
+$scrim: #000000;
+$shadow: #000000;
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -74,7 +108,7 @@ body {
   padding-left: 4px;
   padding-right: 4px;
   background-color: rgb(236 239 230);
-  box-shadow: 0 1px 2px rgb(0,0,0);
+  box-shadow: 0 1px 2px rgb(0 0 0);
 }
 .top-app-bar--small .headline {
   font-size: 22px;
@@ -87,13 +121,13 @@ body {
 .card__filled {
   border-radius: 12px;
   padding: 16px;
-  background-color: #e0e4db;
+  background-color: $surface-container-highest;
 }
 .card__outlined {
   border-radius: 12px;
   padding: 16px;
-  border: 1px solid #c2c9bd;
-  background-color: #f7fbf1;
+  border: 1px solid $outline-variant;
+  background-color: $surface;
 }
 .label-large {
   font-size: 14px;
