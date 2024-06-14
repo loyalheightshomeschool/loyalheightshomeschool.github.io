@@ -140,11 +140,11 @@ layout: default
 {% include schedule.html %}
 
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == 'Wednesday' %}
-<a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %} cell" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">{{ class.class_name }}<br>
-  {{ class.teacher_name }}<br>
-  Ages: {{ class.ages }}<br>
-  ${{ class.class_price }}
-  <br>{{ class.exceptions }}
+<a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %} cell" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">{{ class.class_name }}
+  {% if class.teacher_name %}<br>{{ class.teacher_name }}{& endif %}
+  {% if class.ages %}<br>Ages: {{ class.ages }}{% endif %}
+  {% if class.class_price %}<br>${{ class.class_price }}{% endif %}
+  {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
 </a>
 {% endif %}{% endfor %}
 </div>
@@ -154,9 +154,9 @@ layout: default
 {% if page.descriptions %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
 <h3>Wednesdays</h3>
 
-<div class="descriptions">
+<div class="container">
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
-<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="description">
+<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card__filled">
   <h4>{{ class.class_name }}{% if class.status %} - <mark>{{ class.status }}</mark>{% endif %}</h4>
   <p>
     Instructor: <a href="/meet-our-teachers.html#{{ class.teacher_name | downcase | replace: " ", "-" }}">{{ class.teacher_name }}</a><br>
