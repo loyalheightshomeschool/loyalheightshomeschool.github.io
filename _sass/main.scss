@@ -241,7 +241,8 @@ body {
     height: 40px;
     @include label-large;
   }
-  & answer {
+  & .answer {
     @include body-medium;
     padding: 8px 16px;
+  }
 }
