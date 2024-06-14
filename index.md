@@ -33,12 +33,6 @@ The LHH program provides a sense of community among homeschooling families as we
 2101 NW 77th St
 Seattle, WA 98117
 
-**Email:** loyalheightshomeschool@gmail.com
-
-**Google Group**: 
-
-**Facebook Group**:
-
 ### Newcomers
 
 If you are a newcomer interested in our program and would like to learn more, we encourage you to come in person to check it out. The majority of families are typically at the Loyal Heights Community Center from around 10:00 am to 3:00 pm on Wednesdays when classes are being held. If you would like someone to greet you when you arrive, please email loyalheightshomeschool@gmail.com in advance of the day you plan to come. We will make sure one of our parent volunteers is available to give you a tour, answer questions, and introduce you to other families.
