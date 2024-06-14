@@ -224,10 +224,21 @@ body {
     padding: 16px;
   }
   &__filled {
-    background-color: $surface-container-highest;
+    background-color: $surface-container;
+    color: $on-surface;
   }
   &__outlined {
     border: 1px solid $outline-variant;
     background-color: $surface;  
+  }
+}
+
+.faq {
+  background-color: $surface;
+  color: $on-surface;
+  & .question {
+    padding: 8px 16px;
+    height: 40px;
+    @include label-large;
   }
 }
