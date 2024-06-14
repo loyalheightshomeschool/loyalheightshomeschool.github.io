@@ -149,6 +149,7 @@ body {
     grid-template-columns: repeat(4, auto);
   }
 }
+
 .top-app-bar__small {
   display: flex;
   gap: 8px;
@@ -157,15 +158,15 @@ body {
   padding-left: 4px;
   padding-right: 4px;
   background-color: $surface-container;
+  & .headline {
+    @include title-large
+  }
+  & .button {
+    height: 48px;
+    padding: 14px;
+  }
 }
-.top-app-bar--small .headline {
-  font-size: 22px;
-  line-height: 28px;
-}
-.top-app-bar--small .button {
-  height: 48px;
-  padding: 14px;
-}
+
 .tabs {
   display: flex;
   flex-flow: row wrap;
@@ -180,30 +181,29 @@ body {
     height: 40px;
     border-radius: 20px;
     @include label-large
+    &:hover {
+      color: #2aa198;
+      background-color: darkgray;
+    }
+  }
+  & input {
+    &:focus {
+      outline: none;
+    }
+    &:checked + label {
+      color: #268bd2;
+      background-color: #eee8d5;
+    }
+    &[type=radio] {
+      width: 8px;
+      appearance: none;
+      &:first-of-type {
+        width: 0;
+      }
+    }
   }
 }
-.tabs input[type=radio] {
-  width: 8px;
-  appearance: none;
-}
-.tabs input[type=radio]:first-of-type {
-  width: 0;
-}
-.tabs label:hover {
-  color: #2aa198;
-  background-color: darkgray;
-}
-.tabs input:checked + label {
-  color: #268bd2;
-  background-color: #eee8d5;
-}
-.tabs input:focus {
-  outline: none;
-}
-.schedule {
-  display: none;
-  width: 100%;
-}
+
 #Monday:checked ~ #MondaySchedule {
   display: grid;
 }
@@ -219,7 +219,9 @@ body {
 #Friday:checked ~ #FridaySchedule {
   display: grid;
 }
+
 .schedule {
+  display: none;
   grid-auto-rows: 48px;
   grid-auto-columns: auto;
   gap: 4px;
@@ -254,6 +256,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .col1 { grid-column: 1; }
 .col2 { grid-column: 2; }
 .col3 { grid-column: 3; }
@@ -269,14 +272,17 @@ body {
   grid-gap: 8px;
   grid-auto-rows: auto;
 }
-.card__filled {
-  border-radius: 12px;
-  padding: 16px;
-  background-color: $surface-container-highest;
-}
-.card__outlined {
-  border-radius: 12px;
-  padding: 16px;
-  border: 1px solid $outline-variant;
-  background-color: $surface;
+
+.card {
+  &__filled, &__outlined {
+    border-radius: 12px;
+    padding: 16px;
+  }
+  &__filled {
+    background-color: $surface-container-highest;
+  }
+  &__outlined {
+    border: 1px solid $outline-variant;
+    background-color: $surface;  
+  }
 }
