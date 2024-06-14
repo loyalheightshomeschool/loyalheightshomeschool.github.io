@@ -243,6 +243,10 @@ body {
   &__filled {
     background-color: $surface-container;
     color: $on-surface;
+    &:target {
+      background-color: $secondary-container;
+      color: $on-secondary-container;
+    }
   }
   &__outlined {
     border: 1px solid $outline-variant;
