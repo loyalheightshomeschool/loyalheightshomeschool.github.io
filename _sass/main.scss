@@ -159,7 +159,7 @@ body {
   padding-right: 4px;
   background-color: $surface-container;
   & .headline {
-    @include title-large
+    @include title-large;
   }
   & .button {
     height: 48px;
@@ -180,7 +180,7 @@ body {
     padding: 10px 12px;
     height: 40px;
     border-radius: 20px;
-    @include label-large
+    @include label-large;
     &:hover {
       color: #2aa198;
       background-color: darkgray;
