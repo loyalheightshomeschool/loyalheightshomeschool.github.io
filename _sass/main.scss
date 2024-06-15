@@ -256,13 +256,13 @@ body {
   flex-direction: column;
   gap: 4px;
   & .name {
-    @include headline-small;
+    @include title-large;
   }
   & .info {
-    @include title-medium;
+    @include title-small;
   }
   & .description {
-    @include body-medium;
+    @include body-small;
     flex-grow: 1;
   }
   & .enroll {
