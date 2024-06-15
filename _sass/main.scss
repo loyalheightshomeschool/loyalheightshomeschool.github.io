@@ -265,6 +265,15 @@ body {
     @include body-medium;
     flex-grow: 1;
   }
+  & .enroll {
+    align-self: flex-start;
+  }
+}
+
+.divider {
+  border-top: 1px $outline-variant solid;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .button__outlined {
