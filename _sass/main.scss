@@ -233,19 +233,16 @@ body {
 }
 
 .card__filled {
-	background-color: $surface-container;
-	border-radius: 12px;
-  padding: 16px;
-	color: $on-surface;
-	&:target {
-		background-color: $secondary-container;
-    color: $on-secondary-container;
-	}
+  background-color: $surface-container;
+  border-radius: 12px;
+  color: $on-surface;
+  &:target {
+    background-color: $surface-container-highest;
+  }
 }
 .card__outlined {
   background-color: $surface;
   border-radius: 12px;
-  padding: 16px;
   color: $on-surface;
   border: 1px $outline-variant solid;
   &:target {
@@ -253,19 +250,30 @@ body {
   } 
 }
 .class-description {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-	& .name {
-		@include headline-small;
-	}
-	& .info {
-		@include title-medium;
-	}
-	& .description {
-		@include body-medium;
-		flex-grow: 1;
-	}
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  & .name {
+    @include headline-small;
+  }
+  & .info {
+    @include title-medium;
+  }
+  & .description {
+    @include body-medium;
+    flex-grow: 1;
+  }
+}
+
+.button__outlined {
+  height: 40px;
+  padding: 8px 24px;
+  @include label-large;
+  border-radius: 20px;
+  border: 1px $outline solid;
+  &:hover {
+    background-color: rgb(60 105 57 / 0.08);
+  }
 }
 
 .faq {
