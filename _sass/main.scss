@@ -243,14 +243,14 @@ body {
 	}
 }
 .card__outlined {
-	background-color: $surface;
-	border-radius: 12px;
+  background-color: $surface;
+  border-radius: 12px;
   padding: 16px;
-	color: $on-surface;
-	border: 1px $outline-variant solid;
-	&:target {
-		background-color: $surface-container;
-	} 
+  color: $on-surface;
+  border: 1px $outline-variant solid;
+  &:target {
+    background-color: $surface-container;
+  } 
 }
 .class-description {
 	display: flex;
@@ -264,6 +264,7 @@ body {
 	}
 	& .description {
 		@include body-medium;
+		flex-grow: 1;
 	}
 }
 
