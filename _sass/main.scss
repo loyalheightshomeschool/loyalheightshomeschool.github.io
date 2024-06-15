@@ -34,7 +34,7 @@ $shadow: #000000;
 
 @mixin label-small { font-size: 12px; line-height: 16px; letter-spacing: 0.5px; font-weight: 600; }
 @mixin label-medium { font-size: 14px; line-height: 20px; letter-spacing: 0.1px; font-weight: 600; }
-@mixin label-large { font-size: 16px; line-height: 24px; letter-spacing: 0.5px; font-weight: 600; }
+@mixin label-large { font-size: 16px; line-height: 20px; letter-spacing: 0.5px; font-weight: 600; }
 @mixin body-small { font-size: 14px; line-height: 20px; letter-spacing: 0.25px; }
 @mixin body-medium { font-size: 16px; line-height: 24px; letter-spacing: 0.5px; }
 @mixin body-large { font-size: 18px; line-height: 26px; }
@@ -108,7 +108,7 @@ body {
     border-radius: 20px;
     background-color: $secondary-container;
     color: $on-secondary-container;
-    @include label-medium;
+    @include label-large;
   }
 }
 
@@ -125,7 +125,7 @@ body {
     padding: 10px 12px;
     height: 40px;
     border-radius: 20px;
-    @include label-medium;
+    @include label-large;
     &:hover {
       color: #2aa198;
       background-color: darkgray;
@@ -280,7 +280,7 @@ body {
 .button__outlined {
   height: 40px;
   padding: 10px 24px;
-  @include label-medium;
+  @include label-large;
   border-radius: 20px;
   border: 1px $outline solid;
   text-decoration: none;
@@ -295,7 +295,7 @@ body {
   & .question {
     padding: 10px 16px;
     height: 40px;
-    @include label-medium;
+    @include label-large;
   }
   & .answer {
     @include body-medium;
