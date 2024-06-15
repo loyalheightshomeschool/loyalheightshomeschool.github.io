@@ -235,6 +235,7 @@ body {
 .card__filled {
   background-color: $surface-container;
   border-radius: 12px;
+  padding: 16px;
   color: $on-surface;
   &:target {
     background-color: $surface-container-highest;
@@ -243,6 +244,7 @@ body {
 .card__outlined {
   background-color: $surface;
   border-radius: 12px;
+  padding: 16px;
   color: $on-surface;
   border: 1px $outline-variant solid;
   &:target {
@@ -271,6 +273,7 @@ body {
   @include label-large;
   border-radius: 20px;
   border: 1px $outline solid;
+  text-decoration: none;
   &:hover {
     background-color: rgba(60,105,57,0.08);
   }
