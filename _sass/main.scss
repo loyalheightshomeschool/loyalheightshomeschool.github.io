@@ -232,23 +232,39 @@ body {
   grid-auto-rows: auto;
 }
 
-.card {
-  &__filled, &__outlined {
-    border-radius: 12px;
-    padding: 16px;
-  }
-  &__filled {
-    background-color: $surface-container;
-    color: $on-surface;
-    &:target {
-      background-color: $secondary-container;
-      color: $on-secondary-container;
-    }
-  }
-  &__outlined {
-    border: 1px solid $outline-variant;
-    background-color: $surface;  
-  }
+.card__filled {
+	background-color: $surface-container;
+	border-radius: 12px;
+  padding: 16px;
+	color: $on-surface;
+	&:target {
+		background-color: $secondary-container;
+    color: $on-secondary-container;
+	}
+}
+.card__outlined {
+	background-color: $surface;
+	border-radius: 12px;
+  padding: 16px;
+	color: $on-surface;
+	border: 1px $outline-variant solid;
+	&:target {
+		background-color: $surface-container;
+	} 
+}
+.class-description {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	& .name {
+		@include headline-small;
+	}
+	& .info {
+		@include title-medium;
+	}
+	& .description {
+		@include body-medium;
+	}
 }
 
 .faq {
