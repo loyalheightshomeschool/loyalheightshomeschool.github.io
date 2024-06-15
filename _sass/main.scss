@@ -32,21 +32,21 @@ $inverse-primary: #a1d399;
 $scrim: #000000;
 $shadow: #000000;
 
-@mixin label-small { font-size: 12px; font-weight: 600; line-height: 16px; letter-spacing: 0.5px }
-@mixin label-medium { font-size: 14px; font-weight: 600; line-height: 20px; letter-spacing: 0.1px }
-@mixin label-large { font-size: 16px; font-weight: 600; line-height: 24px; letter-spacing: 0.5px }
-@mixin body-small { font-size: 14px; line-height: 20px; letter-spacing: 0.25px }
-@mixin body-medium { font-size: 16px; line-height: 24px; letter-spacing: 0.5px }
-@mixin body-large { font-size: 18px; line-height: 26px }
-@mixin title-small { font-size: 16px; font-weight: 600; line-height: 24px; letter-spacing: 0.15px }
-@mixin title-medium { font-size: 18px; font-weight: 600; line-height: 26px }
-@mixin title-large { font-size: 24px; line-height: 32px }
-@mixin headline-small { font-size: 28px; line-height: 36px }
-@mixin headline-medium { font-size: 32px; line-height: 40px }
-@mixin headline-large { font-size: 36px; line-height: 44px }
-@mixin display-large { font-size: 64px; line-height: 72px; letter-spacing: -0.25px }
-@mixin display-medium { font-size: 50px; line-height: 56px; letter-spacing: -0.25px }
-@mixin display-small { font-size: 40px; line-height: 48px }
+@mixin label-small { font-size: 12px; line-height: 16px; letter-spacing: 0.5px; font-weight: 600; }
+@mixin label-medium { font-size: 14px; line-height: 20px; letter-spacing: 0.1px; font-weight: 600; }
+@mixin label-large { font-size: 16px; line-height: 24px; letter-spacing: 0.5px; font-weight: 600; }
+@mixin body-small { font-size: 14px; line-height: 20px; letter-spacing: 0.25px; }
+@mixin body-medium { font-size: 16px; line-height: 24px; letter-spacing: 0.5px; }
+@mixin body-large { font-size: 18px; line-height: 26px; }
+@mixin title-small { font-size: 16px; line-height: 24px; letter-spacing: 0.15px; font-weight: 600; }
+@mixin title-medium { font-size: 18px; line-height: 26px; font-weight: 600; }
+@mixin title-large { font-size: 24px; line-height: 32px; }
+@mixin headline-small { font-size: 28px; line-height: 36px; }
+@mixin headline-medium { font-size: 32px; line-height: 40px; }
+@mixin headline-large { font-size: 36px; line-height: 44px; }
+@mixin display-large { font-size: 64px; line-height: 72px; letter-spacing: -0.25px; }
+@mixin display-medium { font-size: 50px; line-height: 56px; letter-spacing: -0.25px; }
+@mixin display-small { font-size: 40px; line-height: 48px; }
 
 * {
   box-sizing: border-box;
@@ -116,13 +116,13 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 8px 0px;
+  gap: 8px;
   & label {
     width: calc((100% - 32px) / 5);
     background-color: lightgray;
     text-align: center;
     cursor: pointer;
-    padding: 10px 12px;
+    padding: 8px 12px;
     height: 40px;
     border-radius: 20px;
     @include label-large;
@@ -140,11 +140,8 @@ body {
       background-color: #eee8d5;
     }
     &[type=radio] {
-      width: 8px;
+      position: absolute;
       appearance: none;
-      &:first-of-type {
-        width: 0;
-      }
     }
   }
 }
