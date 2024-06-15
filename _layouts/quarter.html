@@ -156,19 +156,17 @@ layout: default
 
 <div class="container">
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
-<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card__filled">
-  <h4>{{ class.class_name }}{% if class.status %} - <mark>{{ class.status }}</mark>{% endif %}</h4>
-  <p>
+<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card__filled class-description">
+  <h5 class="name">{{ class.class_name }}{% if class.status %} - <mark>{{ class.status }}</mark>{% endif %}</h5>
+  {% if class.teacher_name or class.ages or class.maximum_students or class.class_price or class.exceptions %}<div class="info">
     {% if class.teacher_name %}Instructor: {{ class.teacher_name }}{% endif %}
     {% if class.ages %}<br>Ages: {{ class.ages }}{% endif %}
     {% if class.maximum_students %}<br>Maximum class size: {{ class.maximum_students }}{% endif %}
     {% if class.class_price %}<br>${{ class.class_price }}{% endif %}
     {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
-    {% if class.link %}<br><a rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll in {{ class.class_name }}</a>{% endif %}
-  </p>
-  <p>
-    {{ class.description }}
-  </p>
+  </div>{% endif %}
+  {% if class.description %}<div class="description">{{ class.description }}</div>{% endif %}
+  {% if class.link %}<a rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll in {{ class.class_name }}</a>{% endif %}
 </div>
 {% endif %}{% endfor %}
 </div>
