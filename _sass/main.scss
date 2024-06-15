@@ -254,7 +254,7 @@ body {
 .class-description {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 16px;
   & .name {
     @include headline-small;
   }
