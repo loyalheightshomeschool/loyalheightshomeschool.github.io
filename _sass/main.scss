@@ -104,11 +104,11 @@ body {
   & .button {
     text-decoration: none;
     height: 40px;
-    padding: 8px 24px;
+    padding: 10px 24px;
     border-radius: 20px;
     background-color: $secondary-container;
     color: $on-secondary-container;
-    @include label-large;
+    @include label-medium;
   }
 }
 
@@ -122,10 +122,10 @@ body {
     background-color: lightgray;
     text-align: center;
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 10px 12px;
     height: 40px;
     border-radius: 20px;
-    @include label-large;
+    @include label-medium;
     &:hover {
       color: #2aa198;
       background-color: darkgray;
@@ -279,8 +279,8 @@ body {
 
 .button__outlined {
   height: 40px;
-  padding: 8px 24px;
-  @include label-large;
+  padding: 10px 24px;
+  @include label-medium;
   border-radius: 20px;
   border: 1px $outline solid;
   text-decoration: none;
@@ -293,9 +293,9 @@ body {
   background-color: $surface;
   color: $on-surface;
   & .question {
-    padding: 8px 16px;
+    padding: 10px 16px;
     height: 40px;
-    @include label-large;
+    @include label-medium;
   }
   & .answer {
     @include body-medium;
