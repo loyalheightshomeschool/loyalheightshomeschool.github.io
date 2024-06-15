@@ -166,7 +166,7 @@ layout: default
     {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
   </div>{% endif %}
   {% if class.description %}<div class="description">{{ class.description }}</div>{% endif %}
-  {% if class.link %}<a class="button__outlined" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
+  {% if class.link %}<hr class="divider"><a class="button__outlined enroll" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
 </div>
 {% endif %}{% endfor %}
 </div>
