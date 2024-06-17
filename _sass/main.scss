@@ -431,13 +431,13 @@ input[type=checkbox], input[type=radio] {
         place-content: center;
         place-items: center;
         text-decoration: none;
-        color: rgb(var(--primary));  
+        color: rgb($primary);
         flex-grow: 1;
-        & > headline {
+        & > .headline {
           flex-grow: 1;
           @include title-large;
         }
-        & > leading-icon {
+        & > .leading-icon {
           height: 24px;
           width: 24px;
         }
@@ -554,9 +554,6 @@ input[type=checkbox], input[type=radio] {
     @include body-medium;
     flex-grow: 1;
   }
-  & .enroll {
-    align-self: flex-start;
-  }
   &:target {
       background-color: rgb(var(--on-surface), 0.1);
       @include elevation-level1;
@@ -574,6 +571,13 @@ input[type=checkbox], input[type=radio] {
   grid-auto-flow: row dense;
   grid-gap: 8px;
   grid-auto-rows: auto;
+}
+
+nav {
+  display: flex;
+        flex-flow: row nowrap;
+        place-content: center;
+        place-items: center;
 }
 
 .col1 { grid-column: 1; }
