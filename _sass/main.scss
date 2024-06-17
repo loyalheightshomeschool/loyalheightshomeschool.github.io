@@ -121,6 +121,7 @@ input[type=checkbox], input[type=radio] {
     border-radius: 20px;
     column-gap: 8px;
     height: 40px;
+    min-width: max-content;
     & > .icon {
       height: 18px;
       width: 18px;
@@ -400,8 +401,8 @@ input[type=checkbox], input[type=radio] {
   grid-auto-columns: 1fr;
   place-content: stretch;
   place-items: stretch;
-  border-radius: 20px;
-  height: 40px;
+  border-radius: 21px;
+  height: 42px;
   border: 1px rgb(var(--outline)) solid;
   background-color: rgb(var(--surface));  
 }
