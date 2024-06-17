@@ -130,17 +130,19 @@ layout: default
   {% endcase %}
 {% endif %}{% endfor %}
 
-<div class="tabs">
-  {% if mo %}<input type="radio" name="tabs" id="Monday"><label for="Monday">Monday</label>{% endif %}
-  {% if tu %}<input type="radio" name="tabs" id="Tuesday"><label for="Tuesday">Tuesday</label>{% endif %}
-  {% if we %}<input type="radio" name="tabs" id="Wednesday" checked><label for="Wednesday">Wednesday</label>{% endif %}
-  {% if th %}<input type="radio" name="tabs" id="Thursday"><label for="Thursday">Thursday</label>{% endif %}
-  {% if fr %}<input type="radio" name="tabs" id="Friday"><label for="Friday">Friday</label>{% endif %}
+<div class="segmented-button-container">
+  {% if mo %}<input type="radio" name="tabs" id="Monday"><label class="button segmented" for="Monday">Monday</label>{% endif %}
+  {% if tu %}<input type="radio" name="tabs" id="Tuesday"><label class="button segmented" for="Tuesday">Tuesday</label>{% endif %}
+  {% if we %}<input type="radio" name="tabs" id="Wednesday" checked><label class="button segmented" for="Wednesday">Wednesday</label>{% endif %}
+  {% if th %}<input type="radio" name="tabs" id="Thursday"><label class="button segmented" for="Thursday">Thursday</label>{% endif %}
+  {% if fr %}<input type="radio" name="tabs" id="Friday"><label class="button segmented" for="Friday">Friday</label>{% endif %}
+</div>
 <div id="WednesdaySchedule" class="schedule">
 {% include schedule.html %}
 
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == 'Wednesday' %}
-<a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %} cell" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">{{ class.class_name }}
+<a class="{% case class.room %}{% when "Room 1" %}col2{% when "Room 2" %}col3{% when "Room 3" %}col4{% when "Room 4" %}col5{% when "Gym" %}col6{% when "Outside" %}col7{% when "Offsite" %}col8{% endcase %}" style="grid-row-start: {% case class.start_time %}{% when "9.5" %}2{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% endcase %}; grid-row-end: {% case class.end_time %}{% when "10" %}3{% when "10.5" %}4{% when "11" %}5{% when "11.5" %}6{% when "12" %}7{% when "12.5" %}8{% when "1" %}9{% when "1.5" %}10{% when "2" %}11{% when "2.5" %}12{% when "3" %}13{% when "3.5" %}14{% endcase %}" href="#{{ class.class_name | downcase | replace: " ", "-" }}">
+  <div class="class-name">{{ class.class_name }}</div>
   {% if class.teacher_name %}<br>{{ class.teacher_name }}{% endif %}
   {% if class.ages %}<br>Ages: {{ class.ages }}{% endif %}
   {% if class.class_price %}<br>${{ class.class_price }}{% endif %}
@@ -149,14 +151,14 @@ layout: default
 {% endif %}{% endfor %}
 </div>
 </div>
-{% if page.schedule %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
+{% if page.schedule %}<p><a class="button common filled-tonal" rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
 <h2>Descriptions</h2>
-{% if page.descriptions %}<p><a rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
+{% if page.descriptions %}<p><a class="button common filled-tonal" rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
 <h3>Wednesdays</h3>
 
-<div class="container">
+<div class="class-description-container">
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
-<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card__filled class-description">
+<div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card outlined class-description">
   <h5 class="name">{{ class.class_name }}{% if class.status %} - <mark>{{ class.status }}</mark>{% endif %}</h5>
   {% if class.teacher_name or class.ages or class.maximum_students or class.class_price or class.exceptions %}<div class="info">
     {% if class.teacher_name %}Instructor: {{ class.teacher_name }}{% endif %}
@@ -166,7 +168,7 @@ layout: default
     {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
   </div>{% endif %}
   {% if class.description %}<div class="description">{{ class.description }}</div>{% endif %}
-  {% if class.link %}<hr class="divider"><a class="button__outlined enroll" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
+  {% if class.link %}<hr class="divider"><a class="button common filled-tonal enroll" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
 </div>
 {% endif %}{% endfor %}
 </div>
