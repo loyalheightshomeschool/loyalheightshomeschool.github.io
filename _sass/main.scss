@@ -72,12 +72,13 @@ body {
   letter-spacing: 0px;
   padding: 88px 24px 24px;
   overflow-y: scroll;
-  scroll-margin-top: 88px;
+  scroll-snap-type: y;
+  scroll-padding-top: 88px;
 }
 @media (width <= 599px) {
   body {
     padding: 80px 16px 16px;
-    scroll-margin-top: 80px;
+    scroll-padding-top: 80px;
     
   }
   span.weekday-suffix {
