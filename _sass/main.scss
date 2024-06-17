@@ -50,155 +50,527 @@ $shadow: #000000;
 @mixin display-medium { font-size: 50px; line-height: 56px; letter-spacing: -0.25px; }
 @mixin display-small { font-size: 40px; line-height: 48px; }
 
+@mixin elevation-level1 { box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
+@mixin elevation-level2 { box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+@mixin elevation-level3 { box-shadow: 0 11px 7px 0 rgba(0, 0, 0, 0.19), 0 13px 25px 0 rgba(0, 0, 0, 0.3); }
+@mixin elevation-level4 { box-shadow: 0 14px 12px 0 rgba(0, 0, 0, 0.17), 0 20px 40px 0 rgba(0, 0, 0, 0.3); }
+@mixin elevation-level5 { box-shadow: 0 17px 17px 0 rgba(0, 0, 0, 0.15), 0 27px 55px 0 rgba(0, 0, 0, 0.3); }
+
 * {
   box-sizing: border-box;
-  padding: 0;
   border: 0;
+  padding: 0;
   margin: 0;
+  font: inherit;
 }
 body {
   font-family: Carlito, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0px;
-  margin: 0 24px 24px;
+  padding: 88px 24px 24px;
 }
 @media (width <= 599px) {
   body {
-    margin: 0 16px 16px;
+    padding: 80px 16px 16px;
   }
-  .tabs label span {
+  span.weekday-suffix {
     display: none;
   }
-  .container {
+  .class-description-container {
     grid-template-columns: repeat(1, auto);
   }
 }
 @media (600px <= width <= 839px) {
-  .tabs label span {
+  span.weekday-suffix {
     display: none;
   }
-  .container {
+  .class-description-container {
     grid-template-columns: repeat(1, auto);
   }
 }
 @media (840px <= width <= 1199px) {
-  .container {
+  .class-description-container {
     grid-template-columns: repeat(2, auto);
   }
 }
 @media (1200px <= width) {
-  .container {
+  .class-description-container {
     grid-template-columns: repeat(3, auto);
   }
 }
 
-.top-app-bar__small {
-  display: flex;
-  gap: 8px;
-  height: 64px;
-  align-items: center;
-  padding-left: 4px;
-  padding-right: 4px;
-  & .headline {
-    @include title-large;
-  }
-  & .button {
-    text-decoration: none;
-    height: 40px;
-    padding: 7px 24px 9px;
-    border-radius: 20px;
-    background-color: $secondary-container;
-    color: $on-secondary-container;
-    @include label-large;
-  }
+input[type=checkbox], input[type=radio] {
+  appearance: none;
+  outline: none;
+  position: absolute;
 }
 
-.tabs {
+.button {
+  appearance: none;
+  cursor: pointer;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 8px;
-  & label {
-    width: calc((100% - 32px) / 5);
-    background-color: lightgray;
-    text-align: center;
-    cursor: pointer;
-    padding: 7px 12px 9px;
-    height: 40px;
+  flex-flow: row nowrap;
+  place-content: center;
+  place-items: center;
+  text-decoration: none;
+  @include label-large;
+  &.common {
     border-radius: 20px;
-    @include label-large;
+    column-gap: 8px;
+    height: 40px;
+    & > .icon {
+      height: 18px;
+      width: 18px;
+    }
+    &.elevated {
+      background-color: $surface-container-low;
+      color: $primary;
+      @include elevation-level1;
+      &:hover {
+        @include elevation-level2;
+      }
+    }
+    &.filled {
+      background-color: $primary;
+      color: $on-primary;
+      &:hover {
+        @include elevation-level1;
+      }
+    }
+    &.filled-tonal {
+      background-color: $secondary-container;
+      color: $on-secondary-container;
+      &:hover {
+        @include elevation-level1;
+        background-color: color.change($on-secondary-container, $alpha: 0.08);
+      }
+      &:focus {
+        background-color: color.change($on-secondary-container, $alpha: 0.1);
+      }
+      &:active {
+        background-color: color.change($on-secondary-container, $alpha: 0.1);
+      }
+    }
+    &.outlined {
+      border: 1px $outline solid;
+      color: $primary;
+    }
+    &.elevated, &.filled, &.outlined, &.text {
+      &:hover {
+        background-color: color.change($on-primary, $alpha: 0.08);
+      }
+      &:focus {
+        background-color: color.change($on-primary, $alpha: 0.1);
+      }
+      &:active {
+        background-color: color.change($on-primary, $alpha: 0.1);
+      }
+    }
+    &.text {
+      color: $primary;
+      &.no-icon {
+        padding: 0 12px;
+      }
+      &.with-icon {
+        padding: 0 16px 0 12px;
+      }
+    }
+    &.elevated, &.filled, &.filled-tonal, &.outlined {
+      &.no-icon {
+        padding: 0 24px;
+      }
+      &.with-icon {
+        padding: 0 24px 0 16px;
+      }
+    }
+  }
+  &.fab {
+    background-color: $primary-container;
+    color: $on-primary-container;
+    column-gap: 16px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    @include elevation-level1;
+
+    &.small, &.regular, &.extended {
+      & > .icon {
+        height: 24px;
+        width: 24px;
+      }
+    }
+    &.large > .icon {
+      height: 36px;
+      width: 36px;
+    }
+    &.regular {
+      width: 56px;
+    }
+    &.extended {
+      min-width: 80px;
+    }
+    &.regular, &.extended {
+      height: 56px;
+      border-radius: 16px;
+    }
+    &.small {
+      height: 40px;
+      width: 40px;
+      border-radius: 12px;
+    }
+    &.large {
+      height: 96px;
+      width: 96px;
+      border-radius: 28px;
+    }
     &:hover {
-      color: #2aa198;
-      background-color: darkgray;
+      background-color: color.change($on-primary-container, $alpha: 0.08);
+      @include elevation-level2;
+    }
+    &:focus {
+      background-color: color.change($on-primary-container, $alpha: 0.1);
+    }
+    &:active {
+      background-color: color.change($on-primary-container, $alpha: 0.1);
     }
   }
-  & input {
-    &:focus {
-      outline: none;
+  &.icon-button {
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    & > .icon {
+      width: 24px;
+      height: 24px;
     }
-    &:checked + label {
-      color: #268bd2;
-      background-color: #eee8d5;
+    &.standard {
+      &.toggle {
+        color: $on-surface-variant;
+        &:hover {
+          background-color: color.change($primary, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($primary, $alpha: 0.1);
+        }
+      }
+      input[type=checkbox]:focus + &.toggle {
+        background-color: color.change($primary, $alpha: 0.1);
+      }
+      &.normal, input[type=checkbox]:checked + &.toggle {
+        color: $primary;
+        &:hover {
+          background-color: color.change($on-surface-variant, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($on-surface-variant, $alpha: 0.1);
+        }
+      }
+      &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
+        background-color: color.change($on-surface-variant, $alpha: 0.1);
+      }
     }
-    &[type=radio] {
-      position: absolute;
-      appearance: none;
+
+    &.filled {
+      &.toggle {
+        color: $primary;
+        background-color: $surface-container-highest;
+        &:hover {
+          background-color: color.change($primary, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($primary, $alpha: 0.1);
+        }
+      }
+      input[type=checkbox]:focus + &.toggle {
+        background-color: color.change($primary, $alpha: 0.1);
+      }
+      &.normal, input[type=checkbox]:checked + &.toggle {
+        color: $on-primary;
+        background-color: $primary;
+        &:hover {
+          background-color: color.change($on-primary, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($on-primary, $alpha: 0.1);
+        }
+      }
+      &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
+        background-color: color.change($on-primary, $alpha: 0.1);
+      }
+    }
+
+    &.filled-tonal {
+      &.toggle {
+        color: $on-surface-variant;
+        background-color: $surface-container-highest;
+        &:hover {
+          background-color: color.change($on-surface-variant, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($on-surface-variant, $alpha: 0.1);
+        }
+      }
+      input[type=checkbox]:focus + &.toggle {
+        background-color: color.change($on-surface-variant, $alpha: 0.1);
+      }
+      &.normal, input[type=checkbox]:checked + &.toggle {
+        color: $on-secondary-container;
+        background-color: $secondary-container;
+        &:hover {
+          background-color: color.change($on-secondary-container, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($on-secondary-container, $alpha: 0.1);
+        }
+      }
+      &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
+        background-color: color.change($on-secondary-container, $alpha: 0.1);
+      }
+    }
+
+    &.outlined {
+      &.toggle {
+        color: $on-surface-variant;
+        border: 1px surface solid;
+        &:hover {
+          background-color: color.change($on-surface-variant, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($on-surface-variant, $alpha: 0.1);
+        }
+      }
+      input[type=checkbox]:focus + &.toggle {
+        background-color: color.change($on-surface-variant, $alpha: 0.1);
+      }
+      &.normal, input[type=checkbox]:checked + &.toggle {
+        color: $inverse-on-surface;
+        background-color: $inverse-surface;
+        border: 0;
+        &:hover {
+          background-color: color.change($inverse-on-surface, $alpha: 0.08);
+        }
+        &:active {
+          background-color: color.change($inverse-on-surface, $alpha: 0.1);
+        }
+      }
+      &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
+        background-color: color.change($inverse-on-surface, $alpha: 0.1);
+      }
+    }
+  }
+
+  &.segmented {
+    height: 40px;
+    border-radius: 20px;
+    padding: 0 12px;
+    column-gap: 8px;
+    color: $on-surface;
+    &:hover {
+      background-color: color.change($on-surface, $alpha: 0.08);
+    }
+    &:active {
+      background-color: color.change($on-surface, $alpha: 0.1);
+    }
+    input[type=checkbox]:focus + &, input[type=radio]:focus + & {
+      background-color: color.change($on-surface, $alpha: 0.1);
+    }
+    input[type=checkbox]:checked + &, input[type=radio]:checked + & {
+      color: $on-secondary-container;
+      background-color: $secondary-container;
+      border: 1px $outline solid;
+      &:hover {
+        background-color: color.change($on-secondary-container, $alpha: 0.08);
+      }
+      &:active {
+        background-color: color.change($on-secondary-container, $alpha: 0.1);
+      }
+    }
+    input[type=checkbox]:checked:focus + &, input[type=radio]:checked:focus + & {
+      background-color: color.change($on-secondary-container, $alpha: 0.1);
     }
   }
 }
 
-#Monday:checked ~ #MondaySchedule {
+.segmented-button-container {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  place-content: stretch;
+  place-items: stretch;
+  border-radius: 20px;
+  height: 40px;
+  border: 1px $outline solid;
+  background-color: $surface;
 }
-#Tuesday:checked ~ #TuesdaySchedule {
-  display: grid;
+
+.app-bar {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  place-content: center;
+  place-items: center;
+  gap: 8px;
+  width: 100vw;
+  &.top {
+    background-color: $surface-container;
+    top: 0;
+    left: 0;
+    @include elevation-level2;
+    &.small {
+      height: 64px;
+      padding: 0 12px;
+      & > .home-link {
+        appearance: none;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        place-content: center;
+        place-items: center;
+        text-decoration: none;
+        color: $primary;
+        flex-grow: 1;
+        & > headline {
+          flex-grow: 1;
+          @include title-large;
+        }
+        & > leading-icon {
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
 }
-#Wednesday:checked ~ #WednesdaySchedule {
-  display: grid;
+
+/* <div class="app-bar top small"><a class="home-link" href=""><svg class="leading-icon"></svg><h1 class="headline"></h1></a><nav></nav></div> */
+
+/* lists menus navigation-drawer text-field */
+/* responsive-dropdown-menu */
+
+.card {
+  border-radius: 12px;
+  padding: 16px;
+
+  &.elevated {
+    background-color: $surface-container-low;
+    @include elevation-level1;
+    &:target {
+      background-color: color.change($on-surface, $alpha: 0.1);
+      @include elevation-level2;
+    }
+  }
+  &.filled {
+    background-color: $surface-container-highest;
+    &:target {
+      background-color: color.change($on-surface, $alpha: 0.1);
+      @include elevation-level1;
+    }
+  }
+  &.outlined {
+    background-color: $surface;
+    border: 1px $outline-variant solid;
+    &:target {
+      background-color: color.change($on-surface, $alpha: 0.1);
+      @include elevation-level1;
+    }
+  }
 }
-#Thursday:checked ~ #ThursdaySchedule {
-  display: grid;
-}
-#Friday:checked ~ #FridaySchedule {
-  display: grid;
-}
+
+/* loyal heights homeschool specific stuff */
+
 
 .schedule {
-  display: none;
-  grid-auto-rows: 48px;
-  grid-auto-columns: auto;
+  display: grid; /* display: none; */
   gap: 4px;
-  width: 100%;
-  margin: 0 auto;
+  grid-auto-columns: max-content;
+  grid-auto-rows: max-content;
+  max-width: 100%;
   overflow-x: scroll;
+  & > * {
+    padding: 8px;
+  }
+  & > .col1 {
+    align-self: center;
+    border-radius: 8px;
+    left: 0;
+    position: sticky;
+    text-align: center;
+    z-index: 2;
+    @include label-medium;
+  }
+  & > .row1 {
+    border-radius: 8px;
+    text-align: center;
+    @include label-medium;
+  }
+  & > a {
+    background-color: $surface;
+    border-radius: 8px;
+    border: 1px $outline-variant solid;
+    color: $on-surface;
+    text-decoration: none;
+    @include body-small;
+    &:hover {
+      background-color: color.change($on-surface, $alpha: 0.08);
+      @include elevation-level1;
+    }
+    & > .class-name {
+      @include title-small;
+    }
+  }
+  & > .non-class {
+    background-color: $surface;
+    border-radius: 8px;
+    border: 1px $outline-variant solid;
+    color: $on-surface;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    text-transform: uppercase;
+    @include title-small;
+  }
+  & > .shim {
+    position: sticky;
+    left: 0;
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: -1;
+    background-color: white;
+    z-index: 1;
+  }
 }
-.schedule > .cell {
-  border: 2px #000000 solid;
-  padding: 8px;
-  font-size: 13px;
-  text-decoration: none;
-  color: #000000;
-  background-color: #ffffff;
-}
-.schedule > .cell::first-line {
-  font-weight: bold;
-}
-.schedule > .label {
-  padding: 8px;
-  font-size: 13px;
-  text-align: center;
-  align-self: center;
-  font-weight: bold;
-}
-.schedule > .break {
-  text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
+
+.class-description {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  & .name {
+    @include title-large;
+  }
+  & .info {
+    @include title-medium;
+  }
+  & .description {
+    @include body-medium;
+    flex-grow: 1;
+  }
+  & .enroll {
+    align-self: flex-start;
+  }
+}
+
+.divider {
+  border-top: 1px $outline-variant solid;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.class-description-container {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-gap: 8px;
+  grid-auto-rows: auto;
 }
 
 .col1 { grid-column: 1; }
@@ -209,6 +581,7 @@ body {
 .col6 { grid-column: 6; }
 .col7 { grid-column: 7; }
 .col8 { grid-column: 8; }
+.col9 { grid-column: 9; }
 
 .row1 { grid-row: 1; }
 .row2 { grid-row: 2; }
@@ -226,81 +599,3 @@ body {
 .row14 { grid-row: 14; }
 .row15 { grid-row: 15; }
 .row16 { grid-row: 16; }
-
-.container {
-  display: grid;
-  grid-auto-flow: row dense;
-  grid-gap: 8px;
-  grid-auto-rows: auto;
-}
-
-.card__filled {
-  background-color: $surface-container;
-  border-radius: 12px;
-  padding: 16px;
-  color: $on-surface;
-  &:target {
-    background-color: $surface-container-highest;
-  }
-}
-.card__outlined {
-  background-color: $surface;
-  border-radius: 12px;
-  padding: 16px;
-  color: $on-surface;
-  border: 1px $outline-variant solid;
-  &:target {
-    background-color: $surface-container;
-  } 
-}
-.class-description {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  & .name {
-    @include title-large;
-  }
-  & .info {
-    @include title-medium;
-  }
-  & .description {
-    @include body-medium;
-    flex-grow: 1;
-  }
-  & .enroll {
-    align-self: flex-start;
-    color: $on-surface;
-  }
-}
-
-.divider {
-  border-top: 1px $outline-variant solid;
-  margin-top: 8px;
-  margin-bottom: 12px;
-}
-
-.button__outlined {
-  height: 40px;
-  padding: 6px 24px 10px;
-  @include label-large;
-  border-radius: 20px;
-  border: 1px $outline solid;
-  text-decoration: none;
-  &:hover {
-    background-color: rgba(60,105,57,0.08);
-  }
-}
-
-.faq {
-  background-color: $surface;
-  color: $on-surface;
-  & .question {
-    padding: 7px 16px 9px;
-    height: 40px;
-    @include label-large;
-  }
-  & .answer {
-    @include body-medium;
-    padding: 8px 16px;
-  }
-}
