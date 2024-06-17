@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
   </head>
   <body>
-    <nav class="top-app-bar__small">
-      <h1 class="headline">{{ site.title }}</h1>
-      
-      <a href="/quarters/2024-fall.html" class="button">Fall</a>
-      <a href="/quarters/2025-winter.html" class="button">Winter</a>
-      <a href="/quarters/2025-spring.html" class="button">Spring</a>
-      <a href="/calendar.html" class="button">Calendar</a>
-      <a href="/faq.html" class="button">FAQ</a>
-    </nav>
-     <h1>{{ page.title }}</h1>
+    <div class="app-bar top small">
+      <a class="home-link" href=""><svg class="leading-icon"></svg><h1 class="headline">{{ site.title }}</h1></a>
+      <nav>
+        <a href="/quarters/2024-fall.html" class="button common filled-tonal">Fall</a>
+        <a href="/quarters/2025-winter.html" class="button common filled-tonal">Winter</a>
+        <a href="/quarters/2025-spring.html" class="button common filled-tonal">Spring</a>
+        <a href="/calendar.html" class="button common filled-tonal">Calendar</a>
+        <a href="/faq.html" class="button common filled-tonal">FAQ</a>
+      </nav>
+    </div>
+    <h1>{{ page.title }}</h1>
     {{ content }}
   </body>
 </html>
