@@ -82,10 +82,6 @@ body {
   .class-description-container {
     grid-template-columns: repeat(1, auto);
   }
-  
-.app-bar {
-  width: calc(100% + 32px);
-  }
 }
 @media (600px <= width <= 839px) {
   span.weekday-suffix {
@@ -417,7 +413,7 @@ input[type=checkbox], input[type=radio] {
   place-content: center;
   place-items: center;
   gap: 8px;
-  width: calc(100% + 48px);
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
