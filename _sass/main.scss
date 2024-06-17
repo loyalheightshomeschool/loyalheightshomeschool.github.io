@@ -1,38 +1,40 @@
 @use 'sass:color';
 
-$primary: #3c6939;
-$on-primary: #ffffff;
-$primary-container: #bcf0b4;
-$on-primary-container: #002203;
-$secondary: #53634f;
-$on-secondary: #ffffff;
-$secondary-container: #d6e8ce;
-$on-secondary-container: #111f0f;
-$tertiary: #38656a;
-$on-tertiary: #ffffff;
-$tertiary-container: #bcebf0;
-$on-tertiary-container: #002023;
-$error: #ba1a1a;
-$on-error: #ffffff;
-$error-container: #ffdad6;
-$on-error-container: #410002;
-$surface-dim: #d8dbd2;
-$surface: #f7fbf1;
-$surface-bright: #f7fbf1;
-$surface-container-lowest: #ffffff;
-$surface-container-low: #f1f5eb;
-$surface-container: #ecefe6;
-$surface-container-high: #e6e9e0;
-$surface-container-highest: #e0e4db;
-$on-surface: #191d17;
-$on-surface-variant: #424940;
-$outline: #72796f;
-$outline-variant: #c2c9bd;
-$inverse-surface: #2d322c;
-$inverse-on-surface: #eff2e9;
-$inverse-primary: #a1d399;
-$scrim: #000000;
-$shadow: #000000;
+:root {
+  --primary: 60, 105, 57;
+  --on-primary: 255, 255, 255;
+  --primary-container: 188, 240, 180;
+  --on-primary-container: 0, 34, 3;
+  --secondary: 83, 99, 79;
+  --on-secondary: 255, 255, 255;
+  --secondary-container: 214, 232, 206;
+  --on-secondary-container: 17, 31, 15;
+  --tertiary: 56, 101, 106;
+  --on-tertiary: 255, 255, 255;
+  --tertiary-container: 188, 235, 240;
+  --on-tertiary-container: 0, 32, 35;
+  --error: 186, 26, 26;
+  --on-error: 255, 255, 255;
+  --error-container: 255, 218, 214;
+  --on-error-container: 65, 0, 2;
+  --surface-dim: 216, 219, 210;
+  --surface: 247, 251, 241;
+  --surface-bright: 247, 251, 241;
+  --surface-container-lowest: 255, 255, 255;
+  --surface-container-low: 241, 245, 235;
+  --surface-container: 236, 239, 230;
+  --surface-container-high: 230, 233, 224;
+  --surface-container-highest: 224, 228, 219;
+  --on-surface: 25, 29, 23;
+  --on-surface-variant: 66, 73, 64;
+  --outline: 114, 121, 111;
+  --outline-variant: 194, 201, 189;
+  --inverse-surface: 45, 50, 44;
+  --inverse-on-surface: 239, 242, 233;
+  --inverse-primary: 161, 211, 153;
+  --scrim: 0, 0, 0;
+  --shadow: 0, 0, 0;
+}
 
 @mixin label-small { font-size: 12px; line-height: 16px; letter-spacing: 0.5px; font-weight: 600; }
 @mixin label-medium { font-size: 14px; line-height: 20px; letter-spacing: 0.1px; font-weight: 600; }
@@ -124,51 +126,51 @@ input[type=checkbox], input[type=radio] {
       width: 18px;
     }
     &.elevated {
-      background-color: $surface-container-low;
-      color: $primary;
+      background-color: rgb(var(--surface-container-low));
+      color: rgb(var(--primary));  
       @include elevation-level1;
       &:hover {
         @include elevation-level2;
       }
     }
     &.filled {
-      background-color: $primary;
-      color: $on-primary;
+      background-color: rgb(var(--primary));  
+      color: rgb(var(--on-primary));  
       &:hover {
         @include elevation-level1;
       }
     }
     &.filled-tonal {
-      background-color: $secondary-container;
-      color: $on-secondary-container;
+      background-color: rgb(var(--secondary-container));  
+      color: rgb(var(--on-secondary-container));  
       &:hover {
         @include elevation-level1;
-        background-color: color.change($on-secondary-container, $alpha: 0.08);
+        background-color: rgb(var(--on-secondary-container), 0.08);
       }
       &:focus {
-        background-color: color.change($on-secondary-container, $alpha: 0.1);
+        background-color: rgb(var(--on-secondary-container), 0.1);
       }
       &:active {
-        background-color: color.change($on-secondary-container, $alpha: 0.1);
+        background-color: rgb(var(--on-secondary-container), 0.1);
       }
     }
     &.outlined {
-      border: 1px $outline solid;
-      color: $primary;
+      border: 1px rgb(var(--outline)) solid;
+      color: rgb(var(--primary));  
     }
     &.elevated, &.filled, &.outlined, &.text {
       &:hover {
-        background-color: color.change($on-primary, $alpha: 0.08);
+        background-color: rgb(var(--on-primary), 0.08);
       }
       &:focus {
-        background-color: color.change($on-primary, $alpha: 0.1);
+        background-color: rgb(var(--on-primary), 0.1);
       }
       &:active {
-        background-color: color.change($on-primary, $alpha: 0.1);
+        background-color: rgb(var(--on-primary), 0.1);
       }
     }
     &.text {
-      color: $primary;
+      color: rgb(var(--primary));  
       &.no-icon {
         padding: 0 12px;
       }
@@ -186,8 +188,8 @@ input[type=checkbox], input[type=radio] {
     }
   }
   &.fab {
-    background-color: $primary-container;
-    color: $on-primary-container;
+    background-color: rgb(var(--primary-container));  
+    color: rgb(var(--on-primary-container));  
     column-gap: 16px;
     position: fixed;
     bottom: 16px;
@@ -226,14 +228,14 @@ input[type=checkbox], input[type=radio] {
       border-radius: 28px;
     }
     &:hover {
-      background-color: color.change($on-primary-container, $alpha: 0.08);
+      background-color: rgb(var(--on-primary-container), 0.08);
       @include elevation-level2;
     }
     &:focus {
-      background-color: color.change($on-primary-container, $alpha: 0.1);
+      background-color: rgb(var(--on-primary-container), 0.1);
     }
     &:active {
-      background-color: color.change($on-primary-container, $alpha: 0.1);
+      background-color: rgb(var(--on-primary-container), 0.1);
     }
   }
   &.icon-button {
@@ -246,116 +248,116 @@ input[type=checkbox], input[type=radio] {
     }
     &.standard {
       &.toggle {
-        color: $on-surface-variant;
+        color: rgb(var(--on-surface-variant));  
         &:hover {
-          background-color: color.change($primary, $alpha: 0.08);
+          background-color: rgb(var(--primary), 0.08);
         }
         &:active {
-          background-color: color.change($primary, $alpha: 0.1);
+          background-color: rgb(var(--primary), 0.1);
         }
       }
       input[type=checkbox]:focus + &.toggle {
-        background-color: color.change($primary, $alpha: 0.1);
+        background-color: rgb(var(--primary), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: $primary;
+        color: rgb(var(--primary));  
         &:hover {
-          background-color: color.change($on-surface-variant, $alpha: 0.08);
+          background-color: rgb(var(--on-surface-variant), 0.08);
         }
         &:active {
-          background-color: color.change($on-surface-variant, $alpha: 0.1);
+          background-color: rgb(var(--on-surface-variant), 0.1);
         }
       }
       &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
-        background-color: color.change($on-surface-variant, $alpha: 0.1);
+        background-color: rgb(var(--on-surface-variant), 0.1);
       }
     }
 
     &.filled {
       &.toggle {
-        color: $primary;
-        background-color: $surface-container-highest;
+        color: rgb(var(--primary));  
+        background-color: rgb(var(--surface-container-highest));  
         &:hover {
-          background-color: color.change($primary, $alpha: 0.08);
+          background-color: rgb(var(--primary), 0.08);
         }
         &:active {
-          background-color: color.change($primary, $alpha: 0.1);
+          background-color: rgb(var(--primary), 0.1);
         }
       }
       input[type=checkbox]:focus + &.toggle {
-        background-color: color.change($primary, $alpha: 0.1);
+        background-color: rgb(var(--primary), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: $on-primary;
-        background-color: $primary;
+        color: rgb(var(--on-primary));  
+        background-color: rgb(var(--primary));  
         &:hover {
-          background-color: color.change($on-primary, $alpha: 0.08);
+          background-color: rgb(var(--on-primary), 0.08);
         }
         &:active {
-          background-color: color.change($on-primary, $alpha: 0.1);
+          background-color: rgb(var(--on-primary), 0.1);
         }
       }
       &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
-        background-color: color.change($on-primary, $alpha: 0.1);
+        background-color: rgb(var(--on-primary), 0.1);
       }
     }
 
     &.filled-tonal {
       &.toggle {
-        color: $on-surface-variant;
-        background-color: $surface-container-highest;
+        color: rgb(var(--on-surface-variant));  
+        background-color: rgb(var(--surface-container-highest));  
         &:hover {
-          background-color: color.change($on-surface-variant, $alpha: 0.08);
+          background-color: rgb(var(--on-surface-variant), 0.08);
         }
         &:active {
-          background-color: color.change($on-surface-variant, $alpha: 0.1);
+          background-color: rgb(var(--on-surface-variant), 0.1);
         }
       }
       input[type=checkbox]:focus + &.toggle {
-        background-color: color.change($on-surface-variant, $alpha: 0.1);
+        background-color: rgb(var(--on-surface-variant), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: $on-secondary-container;
-        background-color: $secondary-container;
+        color: rgb(var(--on-secondary-container));  
+        background-color: rgb(var(--secondary-container));  
         &:hover {
-          background-color: color.change($on-secondary-container, $alpha: 0.08);
+          background-color: rgb(var(--on-secondary-container), 0.08);
         }
         &:active {
-          background-color: color.change($on-secondary-container, $alpha: 0.1);
+          background-color: rgb(var(--on-secondary-container), 0.1);
         }
       }
       &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
-        background-color: color.change($on-secondary-container, $alpha: 0.1);
+        background-color: rgb(var(--on-secondary-container), 0.1);
       }
     }
 
     &.outlined {
       &.toggle {
-        color: $on-surface-variant;
+        color: rgb(var(--on-surface-variant));  
         border: 1px surface solid;
         &:hover {
-          background-color: color.change($on-surface-variant, $alpha: 0.08);
+          background-color: rgb(var(--on-surface-variant), 0.08);
         }
         &:active {
-          background-color: color.change($on-surface-variant, $alpha: 0.1);
+          background-color: rgb(var(--on-surface-variant), 0.1);
         }
       }
       input[type=checkbox]:focus + &.toggle {
-        background-color: color.change($on-surface-variant, $alpha: 0.1);
+        background-color: rgb(var(--on-surface-variant), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: $inverse-on-surface;
-        background-color: $inverse-surface;
+        color: rgb(var(--inverse-on-surface));  
+        background-color: rgb(var(--inverse-surface));  
         border: 0;
         &:hover {
-          background-color: color.change($inverse-on-surface, $alpha: 0.08);
+          background-color: rgb(var(--inverse-on-surface), 0.08);
         }
         &:active {
-          background-color: color.change($inverse-on-surface, $alpha: 0.1);
+          background-color: rgb(var(--inverse-on-surface), 0.1);
         }
       }
       &.normal:focus, input[type=checkbox]:checked:focus + &.toggle {
-        background-color: color.change($inverse-on-surface, $alpha: 0.1);
+        background-color: rgb(var(--inverse-on-surface), 0.1);
       }
     }
   }
@@ -365,29 +367,29 @@ input[type=checkbox], input[type=radio] {
     border-radius: 20px;
     padding: 0 12px;
     column-gap: 8px;
-    color: $on-surface;
+    color: rgb(var(--on-surface));  
     &:hover {
-      background-color: color.change($on-surface, $alpha: 0.08);
+      background-color: rgb(var(--on-surface), 0.08);
     }
     &:active {
-      background-color: color.change($on-surface, $alpha: 0.1);
+      background-color: rgb(var(--on-surface), 0.1);
     }
     input[type=checkbox]:focus + &, input[type=radio]:focus + & {
-      background-color: color.change($on-surface, $alpha: 0.1);
+      background-color: rgb(var(--on-surface), 0.1);
     }
     input[type=checkbox]:checked + &, input[type=radio]:checked + & {
-      color: $on-secondary-container;
-      background-color: $secondary-container;
-      border: 1px $outline solid;
+      color: rgb(var(--on-secondary-container));  
+      background-color: rgb(var(--secondary-container));  
+      border: 1px rgb(var(--outline)) solid;
       &:hover {
-        background-color: color.change($on-secondary-container, $alpha: 0.08);
+        background-color: rgb(var(--on-secondary-container), 0.08);
       }
       &:active {
-        background-color: color.change($on-secondary-container, $alpha: 0.1);
+        background-color: rgb(var(--on-secondary-container), 0.1);
       }
     }
     input[type=checkbox]:checked:focus + &, input[type=radio]:checked:focus + & {
-      background-color: color.change($on-secondary-container, $alpha: 0.1);
+      background-color: rgb(var(--on-secondary-container), 0.1);
     }
   }
 }
@@ -400,8 +402,8 @@ input[type=checkbox], input[type=radio] {
   place-items: stretch;
   border-radius: 20px;
   height: 40px;
-  border: 1px $outline solid;
-  background-color: $surface;
+  border: 1px rgb(var(--outline)) solid;
+  background-color: rgb(var(--surface));  
 }
 
 .app-bar {
@@ -413,7 +415,7 @@ input[type=checkbox], input[type=radio] {
   gap: 8px;
   width: 100vw;
   &.top {
-    background-color: $surface-container;
+    background-color: rgb(var(--surface-container));  
     top: 0;
     left: 0;
     @include elevation-level2;
@@ -428,7 +430,7 @@ input[type=checkbox], input[type=radio] {
         place-content: center;
         place-items: center;
         text-decoration: none;
-        color: $primary;
+        color: rgb(var(--primary));  
         flex-grow: 1;
         & > headline {
           flex-grow: 1;
@@ -453,25 +455,25 @@ input[type=checkbox], input[type=radio] {
   padding: 16px;
 
   &.elevated {
-    background-color: $surface-container-low;
+    background-color: rgb(var(--surface-container-low));  
     @include elevation-level1;
     &:target {
-      background-color: color.change($on-surface, $alpha: 0.1);
+      background-color: rgb(var(--on-surface), 0.1);
       @include elevation-level2;
     }
   }
   &.filled {
-    background-color: $surface-container-highest;
+    background-color: rgb(var(--surface-container-highest));  
     &:target {
-      background-color: color.change($on-surface, $alpha: 0.1);
+      background-color: rgb(var(--on-surface), 0.1);
       @include elevation-level1;
     }
   }
   &.outlined {
-    background-color: $surface;
-    border: 1px $outline-variant solid;
+    background-color: rgb(var(--surface));  
+    border: 1px rgb(var(--outline-variant)); solid
     &:target {
-      background-color: color.change($on-surface, $alpha: 0.1);
+      background-color: rgb(var(--on-surface), 0.1);
       @include elevation-level1;
     }
   }
@@ -505,14 +507,14 @@ input[type=checkbox], input[type=radio] {
     @include label-medium;
   }
   & > a {
-    background-color: $surface;
+    background-color: rgb(var(--surface));  
     border-radius: 8px;
-    border: 1px $outline-variant solid;
-    color: $on-surface;
+    border: 1px rgb(var(--outline-variant)) solid;
+    color: rgb(var(--on-surface));  
     text-decoration: none;
     @include body-small;
     &:hover {
-      background-color: color.change($on-surface, $alpha: 0.08);
+      background-color: rgb(var(--on-surface), 0.08);
       @include elevation-level1;
     }
     & > .class-name {
@@ -520,10 +522,10 @@ input[type=checkbox], input[type=radio] {
     }
   }
   & > .non-class {
-    background-color: $surface;
+    background-color: rgb(var(--surface));
     border-radius: 8px;
-    border: 1px $outline-variant solid;
-    color: $on-surface;
+    border: 1px rgb(var(--outline-variant)) solid;
+    color: rgb(var(--on-surface));
     display: flex;
     place-content: center;
     place-items: center;
@@ -561,7 +563,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .divider {
-  border-top: 1px $outline-variant solid;
+  border-top: 1px rgb(var(--outline-variant)) solid;
   margin-top: 8px;
   margin-bottom: 12px;
 }
