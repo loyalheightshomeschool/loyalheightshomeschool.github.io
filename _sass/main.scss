@@ -419,7 +419,7 @@ input[type=checkbox], input[type=radio] {
   left: 0;
   z-index: 3;
   &.top {
-    background-color: rgb(var(--surface-container));  
+    background-color: rgb(var(--primary-container));  
     @include elevation-level1;
     &.small {
       height: 64px;
@@ -432,7 +432,7 @@ input[type=checkbox], input[type=radio] {
         place-content: center;
         place-items: center;
         text-decoration: none;
-        color: rgb(var(--primary));
+        color: rgb(var(--on-primary-container));
         flex-grow: 1;
         & > .headline {
           flex-grow: 1;
