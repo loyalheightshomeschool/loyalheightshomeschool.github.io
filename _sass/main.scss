@@ -76,10 +76,6 @@ body {
   body {
     padding: 80px 16px 16px;
   }
-  
-.class-description {
-  scroll-margin-top: 80px;
-  }
   span.weekday-suffix {
     display: none;
   }
@@ -548,7 +544,7 @@ input[type=checkbox], input[type=radio] {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  scroll-margin-top: 88px;
+  scroll-margin-top: 72px;
   & .name {
     @include title-large;
   }
