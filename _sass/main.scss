@@ -417,7 +417,7 @@ input[type=checkbox], input[type=radio] {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   &.top {
     background-color: rgb(var(--surface-container));  
     @include elevation-level1;
