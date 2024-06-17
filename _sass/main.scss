@@ -78,6 +78,7 @@ body {
 .content {
   overflow-y: scroll;
   padding: 24px;
+  height: calc(100vh - 64px);
 }
 @media (width <= 599px) {
   .content {
