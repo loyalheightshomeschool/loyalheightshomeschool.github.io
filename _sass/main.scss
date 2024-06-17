@@ -74,6 +74,7 @@ body {
 .structure {
   display: grid;
   grid-auto-rows: auto;
+  height: 100vh;
 }
 .content {
   overflow-y: scroll;
