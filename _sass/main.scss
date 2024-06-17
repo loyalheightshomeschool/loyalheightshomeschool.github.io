@@ -472,7 +472,7 @@ input[type=checkbox], input[type=radio] {
   }
   &.outlined {
     background-color: rgb(var(--surface));  
-    border: 1px rgb(var(--outline-variant)); solid
+    border: 1px rgb(var(--outline-variant)) solid;
   }
 }
 
