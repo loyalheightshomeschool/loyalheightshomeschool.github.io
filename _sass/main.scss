@@ -65,18 +65,24 @@
   margin: 0;
   font: inherit;
 }
+html {
+  scroll-padding-top: 88px;
+}
 body {
   font-family: Carlito, Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0px;
   padding: 88px 24px 24px;
-  scroll-padding-top: 88px;
+  
 }
 @media (width <= 599px) {
+  html {
+    scroll-padding-top: 80px;
+  }
   body {
     padding: 80px 16px 16px;
-    scroll-padding-top: 80px;
+    
   }
   span.weekday-suffix {
     display: none;
