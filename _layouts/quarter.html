@@ -151,11 +151,8 @@ layout: default
 {% endif %}{% endfor %}
 </div>
 </div>
-{% if page.schedule %}<p><a class="button common filled-tonal" rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
-<h2>Descriptions</h2>
-{% if page.descriptions %}<p><a class="button common filled-tonal" rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
-<h3>Wednesdays</h3>
-
+{% if page.schedule %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
+{% if page.descriptions %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
 <div class="class-description-container">
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
 <div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card outlined class-description">
@@ -168,7 +165,7 @@ layout: default
     {% if class.exceptions %}<br>{{ class.exceptions }}{% endif %}
   </div>{% endif %}
   {% if class.description %}<div class="description">{{ class.description }}</div>{% endif %}
-  {% if class.link %}<hr class="divider"><a class="button common filled-tonal enroll" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
+  {% if class.link %}<hr class="divider"><a class="button common filled-tonal enroll no-icon" rel="noreferrer noopener" target="_blank" href="{{ class.link }}">Enroll</a>{% endif %}
 </div>
 {% endif %}{% endfor %}
 </div>
