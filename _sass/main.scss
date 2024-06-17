@@ -554,6 +554,9 @@ input[type=checkbox], input[type=radio] {
     @include body-medium;
     flex-grow: 1;
   }
+  & .enroll {
+    align-self: flex-start;
+  }
   &:target {
       background-color: rgb(var(--on-surface), 0.1);
       @include elevation-level1;
@@ -578,6 +581,7 @@ nav {
         flex-flow: row nowrap;
         place-content: center;
         place-items: center;
+  gap: 8px;
 }
 
 .col1 { grid-column: 1; }
