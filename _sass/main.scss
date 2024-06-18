@@ -143,10 +143,20 @@ input[type=checkbox], input[type=radio] {
     }
     &.filled-tonal {
       background-color: rgb(var(--secondary-container));  
-      color: rgb(var(--on-secondary-container));  
+      color: rgb(var(--on-secondary-container));
+      position: relative;
       &:hover {
         @include elevation-level1;
-        background-color: rgb(var(--on-secondary-container), 0.08);
+        &::after {
+          background-color: rgb(var(--on-secondary-container), 0.08);
+          content: "";
+          position: absolute;
+          border-radius: 20px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
       &:focus {
         background-color: rgb(var(--on-secondary-container), 0.1);
@@ -306,7 +316,7 @@ input[type=checkbox], input[type=radio] {
     &.filled-tonal {
       &.toggle {
         color: rgb(var(--on-surface-variant));  
-        background-color: rgb(var(--surface-container-highest));  
+        background-color: rgb(var(--surface-container-highest));
         &:hover {
           background-color: rgb(var(--on-surface-variant), 0.08);
         }
