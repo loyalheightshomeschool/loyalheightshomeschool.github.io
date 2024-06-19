@@ -1,5 +1,3 @@
-@use 'sass:color';
-
 :root {
   --primary: 60, 105, 57;
   --on-primary: 255, 255, 255;
@@ -35,6 +33,40 @@
   --scrim: 0, 0, 0;
   --shadow: 0, 0, 0;
 }
+
+$primary: 000000;
+$on-primary: 000000;
+$primary-container: 000000;
+$on-primary-container: 000000;
+$secondary: 000000;
+$on-secondary: 3C6939;
+$secondary-container: FFFFFF;
+$on-secondary-container: BCF0B4;
+$tertiary: 002203;
+$on-tertiary: 53634F;
+$tertiary-container: FFFFFF;
+$on-tertiary-container: D6E8CE;
+$error: 111F0F;
+$on-error: 38656A;
+$error-container: FFFFFF;
+$on-error-container: BCEBF0;
+$surface-dim: 002023;
+$surface: BA1A1A;
+$surface-bright: FFFFFF;
+$surface-container-lowest: FFDAD6;
+$surface-container-low: 410002;
+$surface-container: D8DBD2;
+$surface-container-high: F7FBF1;
+$surface-container-highest: F7FBF1;
+$on-surface: FFFFFF;
+$on-surface-variant: F1F5EB;
+$outline: ECEFE6;
+$outline-variant: E6E9E0;
+$inverse-surface: E0E4DB;
+$inverse-on-surface: 191D17;
+$inverse-primary: 424940;
+$scrim: 72796F;
+$shadow: C2C9BD;
 
 $H-B-inverse-surface-O-inverse-on-surface: #3C413B;
 $H-B-primary-O-on-primary: #4B7548;
@@ -153,52 +185,62 @@ input[type=checkbox], input[type=radio] {
       width: 18px;
     }
     &.elevated {
-      background-color: rgb(var(--surface-container-low));
-      color: rgb(var(--primary));  
+      background-color: $surface-container-low;
+      color: $primary;  
       @include elevation-level1;
       &:hover {
         @include elevation-level2;
+        background-color: $H-B-surface-container-low-O-primary;
+      }
+      &:focus, &:active {
+        background-color: $F-B-surface-container-low-O-primary;
       }
     }
+
     &.filled {
-      background-color: rgb(var(--primary));  
-      color: rgb(var(--on-primary));  
+      background-color: $primary;
+      color: $on-primary;
       &:hover {
         @include elevation-level1;
+        background-color: $H-B-primary-O-on-primary;
+      }
+      &:focus, &:active {
+        background-color: $F-B-primary-O-on-primary;
       }
     }
+
     &.filled-tonal {
-      background-color: rgb(var(--secondary-container));  
-      color: rgb(var(--on-secondary-container));
+      background-color: $secondary-container;
+      color: $on-secondary-container;
       position: relative;
       &:hover {
         @include elevation-level1;
         background-color: $H-B-secondary-container-O-on-secondary-container;
       }
-      &:focus {
-        background-color: $F-B-secondary-container-O-on-secondary-container;
-      }
-      &:active {
+      &:focus, &:active {
         background-color: $F-B-secondary-container-O-on-secondary-container;
       }
     }
+
     &.outlined {
-      border: 1px rgb(var(--outline)) solid;
-      color: rgb(var(--primary));  
-    }
-    &.elevated, &.filled, &.outlined, &.text {
+      border: 1px $outline solid;
+      color: $primary;
       &:hover {
-        background-color: rgb(var(--on-primary), 0.08);
+        background-color: $H-B-surface-O-primary;
       }
-      &:focus {
-        background-color: rgb(var(--on-primary), 0.1);
-      }
-      &:active {
-        background-color: rgb(var(--on-primary), 0.1);
+      &:focus, &:active {
+        background-color: $F-B-surface-O-primary;
       }
     }
+
     &.text {
-      color: rgb(var(--primary));  
+      color: $primary;
+      &:hover {
+        background-color: $H-B-surface-O-primary;
+      }
+      &:focus, &:active {
+        background-color: $F-B-surface-O-primary;
+      }
       &.no-icon {
         padding: 0 12px;
       }
@@ -206,6 +248,7 @@ input[type=checkbox], input[type=radio] {
         padding: 0 16px 0 12px;
       }
     }
+
     &.elevated, &.filled, &.filled-tonal, &.outlined {
       &.no-icon {
         padding: 0 24px;
@@ -216,8 +259,8 @@ input[type=checkbox], input[type=radio] {
     }
   }
   &.fab {
-    background-color: rgb(var(--primary-container));  
-    color: rgb(var(--on-primary-container));  
+    background-color: $primary-container;
+    color: $on-primary-container;
     column-gap: 16px;
     position: fixed;
     bottom: 16px;
@@ -256,14 +299,11 @@ input[type=checkbox], input[type=radio] {
       border-radius: 28px;
     }
     &:hover {
-      background-color: rgb(var(--on-primary-container), 0.08);
+      background-color: $H-B-primary-container-O-on-primary-container;
       @include elevation-level2;
     }
-    &:focus {
-      background-color: rgb(var(--on-primary-container), 0.1);
-    }
-    &:active {
-      background-color: rgb(var(--on-primary-container), 0.1);
+    &:focus, &:active {
+      background-color: $F-B-primary-container-O-on-primary-container;
     }
   }
   &.icon-button {
@@ -276,7 +316,7 @@ input[type=checkbox], input[type=radio] {
     }
     &.standard {
       &.toggle {
-        color: rgb(var(--on-surface-variant));  
+        color: $on-surface-variant;
         &:hover {
           background-color: rgb(var(--primary), 0.08);
         }
@@ -288,7 +328,7 @@ input[type=checkbox], input[type=radio] {
         background-color: rgb(var(--primary), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: rgb(var(--primary));  
+        color: $primary;
         &:hover {
           background-color: rgb(var(--on-surface-variant), 0.08);
         }
@@ -303,8 +343,8 @@ input[type=checkbox], input[type=radio] {
 
     &.filled {
       &.toggle {
-        color: rgb(var(--primary));  
-        background-color: rgb(var(--surface-container-highest));  
+        color: $primary;
+        background-color: $surface-container-highest;
         &:hover {
           background-color: rgb(var(--primary), 0.08);
         }
@@ -316,8 +356,8 @@ input[type=checkbox], input[type=radio] {
         background-color: rgb(var(--primary), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: rgb(var(--on-primary));  
-        background-color: rgb(var(--primary));  
+        color: $on-primary;
+        background-color: $primary;
         &:hover {
           background-color: rgb(var(--on-primary), 0.08);
         }
@@ -332,8 +372,8 @@ input[type=checkbox], input[type=radio] {
 
     &.filled-tonal {
       &.toggle {
-        color: rgb(var(--on-surface-variant));  
-        background-color: rgb(var(--surface-container-highest));
+        color: $on-surface-variant;
+        background-color: $surface-container-highest;
         &:hover {
           background-color: rgb(var(--on-surface-variant), 0.08);
         }
@@ -345,8 +385,8 @@ input[type=checkbox], input[type=radio] {
         background-color: rgb(var(--on-surface-variant), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: rgb(var(--on-secondary-container));  
-        background-color: rgb(var(--secondary-container));  
+        color: $on-secondary-container;
+        background-color: $secondary-container;
         &:hover {
           background-color: rgb(var(--on-secondary-container), 0.08);
         }
@@ -361,7 +401,7 @@ input[type=checkbox], input[type=radio] {
 
     &.outlined {
       &.toggle {
-        color: rgb(var(--on-surface-variant));  
+        color: $on-surface-variant;
         border: 1px surface solid;
         &:hover {
           background-color: rgb(var(--on-surface-variant), 0.08);
@@ -374,8 +414,8 @@ input[type=checkbox], input[type=radio] {
         background-color: rgb(var(--on-surface-variant), 0.1);
       }
       &.normal, input[type=checkbox]:checked + &.toggle {
-        color: rgb(var(--inverse-on-surface));  
-        background-color: rgb(var(--inverse-surface));  
+        color: $inverse-on-surface;
+        background-color: $inverse-surface;
         border: 0;
         &:hover {
           background-color: rgb(var(--inverse-on-surface), 0.08);
@@ -395,29 +435,26 @@ input[type=checkbox], input[type=radio] {
     border-radius: 20px;
     padding: 0 12px;
     column-gap: 8px;
-    color: rgb(var(--on-surface));  
+    color: $on-surface;
     &:hover {
-      background-color: rgb(var(--on-surface), 0.08);
+      background-color: $H-B-surface-O-on-surface;
     }
-    &:active {
-      background-color: rgb(var(--on-surface), 0.1);
-    }
-    input[type=checkbox]:focus + &, input[type=radio]:focus + & {
-      background-color: rgb(var(--on-surface), 0.1);
+    &:active, input[type=checkbox]:focus + &, input[type=radio]:focus + & {
+      background-color: $H-B-surface-O-on-surface;
     }
     input[type=checkbox]:checked + &, input[type=radio]:checked + & {
-      color: rgb(var(--on-secondary-container));  
-      background-color: rgb(var(--secondary-container));  
-      border: 1px rgb(var(--outline)) solid;
+      color: $on-secondary-container;
+      background-color: $secondary-container;
+      border: 1px $outline solid;
       &:hover {
-        background-color: rgb(var(--on-secondary-container), 0.08);
+        background-color: $H-B-secondary-container-O-on-secondary-container;
       }
       &:active {
-        background-color: rgb(var(--on-secondary-container), 0.1);
+        background-color: $F-B-secondary-container-O-on-secondary-container;
       }
     }
     input[type=checkbox]:checked:focus + &, input[type=radio]:checked:focus + & {
-      background-color: rgb(var(--on-secondary-container), 0.1);
+      background-color: $F-B-secondary-container-O-on-secondary-container;
     }
   }
 }
@@ -430,8 +467,8 @@ input[type=checkbox], input[type=radio] {
   place-items: stretch;
   border-radius: 21px;
   height: 42px;
-  border: 1px rgb(var(--outline)) solid;
-  background-color: rgb(var(--surface));  
+  border: 1px $outline solid;
+  background-color: $surface;
 }
 
 .app-bar {
@@ -446,7 +483,7 @@ input[type=checkbox], input[type=radio] {
   left: 0;
   z-index: 3;
   &.top {
-    background-color: rgb(var(--primary));  
+    background-color: $primary;
     @include elevation-level1;
     &.small {
       height: 64px;
@@ -459,7 +496,7 @@ input[type=checkbox], input[type=radio] {
         place-content: center;
         place-items: center;
         text-decoration: none;
-        color: rgb(var(--on-primary));
+        color: $on-primary;
         flex-grow: 1;
         & > .headline {
           flex-grow: 1;
@@ -484,23 +521,23 @@ input[type=checkbox], input[type=radio] {
   padding: 16px;
 
   &.elevated {
-    background-color: rgb(var(--surface-container-low));  
+    background-color: $surface-container-low;
     @include elevation-level1;
     &:target {
-      background-color: rgb(var(--on-surface), 0.1);
+      background-color: $F-surface-container-low-O-on-surface;
       @include elevation-level2;
     }
   }
   &.filled {
-    background-color: rgb(var(--surface-container-highest));  
+    background-color: $surface-container-highest;
     &:target {
-      background-color: rgb(var(--on-surface), 0.1);
+      background-color: $F-surface-container-highest-O-on-surface;
       @include elevation-level1;
     }
   }
   &.outlined {
-    background-color: rgb(var(--surface));  
-    border: 1px rgb(var(--outline-variant)) solid;
+    background-color: $surface;
+    border: 1px $outline-variant solid;
   }
 }
 
@@ -532,14 +569,14 @@ input[type=checkbox], input[type=radio] {
     @include label-medium;
   }
   & > a {
-    background-color: rgb(var(--surface));  
+    background-color: $surface;
     border-radius: 8px;
-    border: 1px rgb(var(--outline-variant)) solid;
-    color: rgb(var(--on-surface));  
+    border: 1px $outline-variant solid;
+    color: $on-surface;
     text-decoration: none;
     @include body-small;
     &:hover {
-      background-color: rgb(var(--on-surface), 0.08);
+      background-color: $H-surface-O-on-surface;
       @include elevation-level1;
     }
     & > .class-name {
@@ -547,10 +584,10 @@ input[type=checkbox], input[type=radio] {
     }
   }
   & > .non-class {
-    background-color: rgb(var(--surface));
+    background-color: $surface;
     border-radius: 8px;
-    border: 1px rgb(var(--outline-variant)) solid;
-    color: rgb(var(--on-surface));
+    border: 1px $outline-variant solid;
+    color: $on-surface;
     display: flex;
     place-content: center;
     place-items: center;
@@ -587,13 +624,13 @@ input[type=checkbox], input[type=radio] {
     align-self: flex-start;
   }
   &:target {
-      background-color: rgb(var(--on-surface), 0.1);
+      background-color: $F-surface-O-on-surface;
       @include elevation-level1;
     }
 }
 
 .divider {
-  border-top: 1px rgb(var(--outline-variant)) solid;
+  border-top: 1px $outline-variant solid;
   margin-top: 8px;
   margin-bottom: 12px;
 }
