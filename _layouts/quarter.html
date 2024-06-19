@@ -130,7 +130,7 @@ layout: default
   {% endcase %}
 {% endif %}{% endfor %}
 
-<div class="segmented-button-container">
+<div class="segmented-button-container" id="sche">
   {% if mo %}<input type="radio" name="tabs" id="Monday"><label class="button segmented" for="Monday">Monday</label>{% endif %}
   {% if tu %}<input type="radio" name="tabs" id="Tuesday"><label class="button segmented" for="Tuesday">Tuesday</label>{% endif %}
   {% if we %}<input type="radio" name="tabs" id="Wednesday" checked><label class="button segmented" for="Wednesday">Wednesday</label>{% endif %}
@@ -169,3 +169,5 @@ layout: default
 </div>
 {% endif %}{% endfor %}
 </div>
+
+<a class="button fab small" href="#sche">&#8593;</a>
