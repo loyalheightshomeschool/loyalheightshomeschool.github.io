@@ -524,14 +524,14 @@ input[type=checkbox], input[type=radio] {
     background-color: $surface-container-low;
     @include elevation-level1;
     &:target {
-      background-color: $F-surface-container-low-O-on-surface;
+      background-color: $F-B-surface-container-low-O-on-surface;
       @include elevation-level2;
     }
   }
   &.filled {
     background-color: $surface-container-highest;
     &:target {
-      background-color: $F-surface-container-highest-O-on-surface;
+      background-color: $F-B-surface-container-highest-O-on-surface;
       @include elevation-level1;
     }
   }
