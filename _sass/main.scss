@@ -131,8 +131,9 @@ body {
   padding: 88px 24px 24px;
 }
 mark {
-  background-color: $primary;
-  color: $on-primary;
+  background-color: $tertiary;
+  color: $on-tertiary;
+  padding: 8px;
 }
 @media (width <= 599px) {
   body {
