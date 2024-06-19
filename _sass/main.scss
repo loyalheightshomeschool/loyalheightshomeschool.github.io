@@ -576,7 +576,7 @@ input[type=checkbox], input[type=radio] {
     text-decoration: none;
     @include body-small;
     &:hover {
-      background-color: $H-surface-O-on-surface;
+      background-color: $H-B-surface-O-on-surface;
       @include elevation-level1;
     }
     & > .class-name {
@@ -624,7 +624,7 @@ input[type=checkbox], input[type=radio] {
     align-self: flex-start;
   }
   &:target {
-      background-color: $F-surface-O-on-surface;
+      background-color: $F-B-surface-O-on-surface;
       @include elevation-level1;
     }
 }
