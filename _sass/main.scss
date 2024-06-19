@@ -659,6 +659,17 @@ nav {
   scroll-margin-top: 72px;
 }
 
+.download-links {
+  display: flex;
+        flex-flow: row wrap;
+        place-content: center;
+        place-items: center;
+        text-decoration: none;
+        color: $on-primary;
+        flex-grow: 1;
+  gap: 8px;
+}
+
 .col1 { grid-column: 1; }
 .col2 { grid-column: 2; }
 .col3 { grid-column: 3; }
