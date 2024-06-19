@@ -130,6 +130,10 @@ body {
   letter-spacing: 0px;
   padding: 88px 24px 24px;
 }
+mark {
+  background-color: $primary;
+  color: $on-primary;
+}
 @media (width <= 599px) {
   body {
     padding: 80px 16px 16px;
