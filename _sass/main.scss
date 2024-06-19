@@ -36,6 +36,32 @@
   --shadow: 0, 0, 0;
 }
 
+$H-B-inverse-surface-O-inverse-on-surface: #3C413B;
+$H-B-primary-O-on-primary: #4B7548;
+$H-B-primary-container-O-on-primary-container: #ACDFA5;
+$H-B-secondary-container-O-on-secondary-container: #C6D7BE;
+$H-B-surface-O-on-surface: #E5E9DF;
+$H-B-surface-O-on-surface-variant: #E8ECE2;
+$H-B-surface-O-primary: #E8EFE2;
+$H-B-surface-container-highest-O-on-surface: #D0D4CB;
+$H-B-surface-container-highest-O-on-surface-variant: #D3D7CE;
+$H-B-surface-container-highest-O-primary: #D2DACE;
+$H-B-surface-container-low-O-on-surface: #DFE3DA;
+$H-B-surface-container-low-O-primary: #E2E9DC;
+
+$F-B-inverse-surface-O-inverse-on-surface: #40453E;
+$F-B-primary-O-on-primary: #4F784C;
+$F-B-primary-container-O-on-primary-container: #A9DBA2;
+$F-B-secondary-container-O-on-secondary-container: #C2D3BA;
+$F-B-surface-O-on-surface: #E0E4DB;
+$F-B-surface-O-on-surface-variant: #E4E9DF;
+$F-B-surface-O-primary: #E4ECDE;
+$F-B-surface-container-highest-O-on-surface: #CCD0C7;
+$F-B-surface-container-highest-O-on-surface-variant: #D0D4CB;
+$F-B-surface-container-highest-O-primary: #CFD7CA;
+$F-B-surface-container-low-O-on-surface: #DBDFD5;
+$F-B-surface-container-low-O-primary: #DEE7D9;
+
 @mixin label-small { font-size: 12px; line-height: 16px; letter-spacing: 0.5px; font-weight: 600; }
 @mixin label-medium { font-size: 14px; line-height: 20px; letter-spacing: 0.1px; font-weight: 600; }
 @mixin label-large { font-size: 16px; line-height: 24px; letter-spacing: 0.5px; font-weight: 600; }
@@ -147,22 +173,13 @@ input[type=checkbox], input[type=radio] {
       position: relative;
       &:hover {
         @include elevation-level1;
-        &::after {
-          background-color: rgb(var(--on-secondary-container), 0.08);
-          content: "";
-          position: absolute;
-          border-radius: 20px;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
+        background-color: $H-B-secondary-container-O-on-secondary-container;
       }
       &:focus {
-        background-color: rgb(var(--on-secondary-container), 0.1);
+        background-color: $F-B-secondary-container-O-on-secondary-container;
       }
       &:active {
-        background-color: rgb(var(--on-secondary-container), 0.1);
+        background-color: $F-B-secondary-container-O-on-secondary-container;
       }
     }
     &.outlined {
