@@ -538,6 +538,10 @@ input[type=checkbox], input[type=radio] {
   &.outlined {
     background-color: $surface;
     border: 1px $outline-variant solid;
+    &:target {
+      background-color: $F-B-surface-O-on-surface;
+      @include elevation-level1;
+    }
   }
 }
 
@@ -623,10 +627,6 @@ input[type=checkbox], input[type=radio] {
   & .enroll {
     align-self: flex-start;
   }
-  &:target {
-      background-color: $F-B-surface-O-on-surface;
-      @include elevation-level1;
-    }
 }
 
 .divider {
