@@ -151,8 +151,12 @@ layout: default
 {% endif %}{% endfor %}
 </div>
 </div>
-{% if page.schedule %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule as Printable PDF</a></p>{% endif %}
-{% if page.descriptions %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions as Printable PDF</a></p>{% endif %}
+{% if page.schedule or page.descriptions %}
+<div class="download-links">
+{% if page.schedule %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.schedule }}">Download Class Schedule</a></p>{% endif %}
+{% if page.descriptions %}<p><a class="button common filled-tonal no-icon" rel="noreferrer noopener" target="_blank" href="{{ page.descriptions }}">Download Class Descriptions</a></p>{% endif %}
+</div>
+{% endif %}
 <div class="class-description-container">
 {% for class in site.data.classes %}{% if class.quarter == page.data and class.day_of_the_week == "Wednesday" %}
 <div id="{{ class.class_name | downcase | replace: " ", "-"}}" class="card outlined class-description">
